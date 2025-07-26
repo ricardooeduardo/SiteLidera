@@ -16,7 +16,6 @@
       }
     </style>
 
-
     <!-- Cabeçalho!! da cabeça -->
   </head>
   <body class="text-gray-800">
@@ -26,12 +25,10 @@
       <img src="Img/Logo Lidera.png" alt="Logo Lidera ESF" style="height: 100px; width: auto;">
     </a>
 
-
     <!-- Botão do mobilezão) -->
     <button id="menu-toggle" class="md:hidden text-white text-3xl focus:outline-none">
       ☰
     </button>
-
 
     <!-- Barrinha de navegação -->
     <nav id="mobile-menu" class="hidden md:flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-5 text-lg absolute md:static top-full left-0 w-full md:w-auto bg-[#214F78] md:bg-transparent px-6 py-4 md:py-0 z-50">
@@ -44,6 +41,8 @@
   </div>
 </header>
 
+<!-- Linha branca entre cabeçalho e banner -->
+<div style="height: 2px; background-color: white;"></div>
 
 <!-- Acionamento para o mobilezão -->
 <script>
@@ -55,126 +54,156 @@
   });
 </script>
 
+<!-- Banner Principal com Carrossel -->
+<section id="home" class="relative min-h-screen flex items-center justify-center px-6 md:px-20 overflow-hidden">
 
-    <!-- Banner Principal -->
-    <section id="home" 
-      class="min-h-screen flex items-center justify-center bg-cover bg-center px-6 md:px-20" 
-      style="background-image: url('/Img/png-clipart-electric-blue-turquoise-cobalt-blue-teal-others-blue-photography\ \(2\).png');">
-      
-      
-      <!-- Quadrado do banner (as letrinhas) -->
-      <div class="bg-white/90 backdrop-blur-md rounded-xl shadow-lg p-8 md:p-16 max-w-7xl w-full flex flex-col md:flex-row items-center justify-between gap-10">
-        <div class="md:w-1/2 text-center md:text-left">
-          <p class="text-sm font-semibold uppercase text-gray-500 tracking-widest mb-3">
-            Capacite. Inspire. Transforme.
-          </p>
-          <h1 class="text-4xl md:text-5xl font-serif font-bold text-[#214066] leading-tight mb-4">
-            Enfermeiro(a) de Saúde da Família,<br class="hidden md:block">
-            chega de se virar sozinho(a)!
-          </h1>
-        </div>
-        <div class="md:w-1/2 text-center md:text-left">
-          <p class="text-gray-700 text-lg mb-6">
-            Aqui você encontra ferramentas que associam a teoria à prática da Unidade Básica de Saúde!
-          </p>
-          <a href="#contact" 
-             class="inline-block bg-[#214066] hover:bg-[#1a3250] text-white font-bold px-8 py-3 rounded-full transition duration-300">
-            Vamos começar?
-          </a>
-        </div>
-      </div>
-    </section>	
+  <!-- Carrossel bolado -->
+  <div id="carousel-bg" class="absolute inset-0 z-0 transition-opacity duration-1000 bg-cover bg-center"
+    style="background-image: url('/Img/Hipertenso.png');">
+  </div>
+  <div class="absolute inset-0 bg-black/30 z-0"></div>
+
+  <!-- Quadradão do botão -->
+  <div class="relative z-10 bg-white/90 backdrop-blur-md rounded-xl shadow-lg p-8 md:p-16 max-w-7xl w-full flex flex-col md:flex-row items-center justify-between gap-10">
+    <div class="md:w-1/2 text-center md:text-left">
+      </p>
+      <h1 class="text-4xl md:text-5xl font-serif font-semibold text-[#214066] leading-tight mb-4">
+        Enfermeiro(a) de Saúde da Família,<br class="hidden md:block">
+        chega de se virar sozinho(a)!
+      </h1>
+    </div>
+    <div class="md:w-1/2 text-center md:text-left">
+      <p class="text-2x1 text-gray-700 text-lg mb-6">
+        Aqui você encontra ferramentas que associam a teoria à prática da Unidade Básica de Saúde!
+      </p>
+      <a href="#contact" 
+         class="inline-block bg-[#214066] hover:bg-[#1a3250] text-white font-bold px-8 py-3 rounded-full transition duration-300">
+        Vamos começar?
+      </a>
+    </div>
+  </div>
+</section>
+<div style="height: 2px; background-color: white;"></div>
+
+<script>
+  const images = [
+    '/Img/1.webp',
+    '/Img/2.png',
+    '/Img/3.jpg',
+    '/Img/4.jpg',
+    '/Img/5.png',
+    '/Img/6.jpg',
+    '/Img/7.webp',
+    '/Img/8.jpg',
+    '/Img/9.jpg',
+    '/Img/10.jpg'
+  ];
+
+  let current = 0;
+  const carousel = document.getElementById('carousel-bg');
+
+  setInterval(() => {
+    current = (current + 1) % images.length;
+    carousel.style.opacity = 0;
+
+    setTimeout(() => {
+      carousel.style.backgroundImage = `url('${images[current]}')`;
+      carousel.style.opacity = 1;
+    }, 500);
+  }, 2100);
+</script>
 
 
-<!-- SERVIÇOS DA MUIÉ -->
-<section class="bg-[#1b2a4b] text-white py-20 px-6 md:px-20">
-  <div class="max-w-7xl mx-auto text-center mb-12">
-    <h2 class="text-3xl md:text-4xl font-bold font-serif mb-4">
+  <!-- Serviço da muié -->
+<section class="relative bg-[#1b2a4b] text-white py-20 px-6 md:px-20 overflow-hidden">
+  
+  
+  <!-- Linha pontilhada SVG atrás dos cards -->
+  <svg class="absolute inset-0 w-full h-full z-0 pointer-events-none" viewBox="0 0 1000 200" preserveAspectRatio="none">
+    <path d="M0,100 Q250,0 500,100 T1000,100" fill="none" stroke="#ffffff44" stroke-width="2" stroke-dasharray="8 8"/>
+  </svg>
+
+  <div class="relative z-10 max-w-7xl mx-auto text-center mb-8">
+    <h2 class="text-3xl md:text-4xl font-bold font-serif mb-3 whitespace-nowrap">
       Fortaleça seu conhecimento nas principais áreas da Atenção Primária
     </h2>
     <p class="text-lg text-gray-300">
       Aprofunde-se nos temas que impactam diretamente sua prática na UBS
     </p>
   </div>
-  <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 gap-6 max-w-6xl mx-auto">
-   
-   
-    <!-- QUADRADIM -->
-    <div class="relative group overflow-hidden rounded-lg shadow-lg border border-white/10 bg-white/10">
-      <img src="/images/algumtremai" alt="Saúde da Mulher" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
+
+  <div class="relative z-10 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 gap-6 max-w-6xl mx-auto">
+    
+    <!-- Cartãozinho -->
+    <div class="relative group overflow-hidden rounded-lg border-2 border-yellow-400">
+      <img src="/Img/Saude da mulher.jpg" alt="Saúde da Mulher" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
       <div class="absolute bottom-0 bg-black/60 w-full py-2 text-center">
         <p class="text-white font-semibold text-sm">Saúde da Mulher</p>
       </div>
     </div>
 
-    <div class="relative group overflow-hidden rounded-lg shadow-lg border border-white/10 bg-white/10">
-      <img src="/images/algumajossa" alt="Puericultura" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
+    <div class="relative group overflow-hidden rounded-lg border-2 border-yellow-400">
+      <img src="/Img/Puericultura.png" alt="Puericultura" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
       <div class="absolute bottom-0 bg-black/60 w-full py-2 text-center">
         <p class="text-white font-semibold text-sm">Puericultura</p>
       </div>
     </div>
 
-    <div class="relative group overflow-hidden rounded-lg shadow-lg border border-white/10 bg-white/10">
-      <img src="/images/pileco" alt="Hipertenso" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
+    <div class="relative group overflow-hidden rounded-lg border-2 border-yellow-400">
+      <img src="/img/Hipertenso.png" alt="Hipertenso" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
       <div class="absolute bottom-0 bg-black/60 w-full py-2 text-center">
         <p class="text-white font-semibold text-sm">Hipertenso</p>
       </div>
     </div>
 
-    <div class="relative group overflow-hidden rounded-lg shadow-lg border border-white/10 bg-white/10">
-      <img src="/images/diabetes" alt="Diabético" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
+    <div class="relative group overflow-hidden rounded-lg border-2 border-yellow-400">
+      <img src="/Img/Diabético.webp" alt="Diabético" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
       <div class="absolute bottom-0 bg-black/60 w-full py-2 text-center">
         <p class="text-white font-semibold text-sm">Diabético</p>
       </div>
     </div>
 
-    <div class="relative group overflow-hidden rounded-lg shadow-lg border border-white/10 bg-white/10">
-      <img src="/images/velhodemais" alt="Saúde do Idoso" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
+    <div class="relative group overflow-hidden rounded-lg border-2 border-yellow-400">
+      <img src="/Img/Saúde do Idoso.jpeg" alt="Saúde do Idoso" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
       <div class="absolute bottom-0 bg-black/60 w-full py-2 text-center">
         <p class="text-white font-semibold text-sm">Saúde do Idoso</p>
       </div>
     </div>
 
-    <div class="relative group overflow-hidden rounded-lg shadow-lg border border-white/10 bg-white/10">
-      <img src="/images/jumento" alt="Planejamento Estratégico" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
+    <div class="relative group overflow-hidden rounded-lg border-2 border-yellow-400">
+      <img src="/Img/Planejamento estratégico em saúde.png" alt="Planejamento Estratégico" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
       <div class="absolute bottom-0 bg-black/60 w-full py-2 text-center">
         <p class="text-white font-semibold text-sm">Planejamento Estratégico</p>
       </div>
     </div>
 
-    <div class="relative group overflow-hidden rounded-lg shadow-lg border border-white/10 bg-white/10">
-      <img src="/images/reproduçãoassexuada" alt="Planejamento Reprodutivo" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
+    <div class="relative group overflow-hidden rounded-lg border-2 border-yellow-400">
+      <img src="/Img/Planejamento Reprodutivo.jpg" alt="Planejamento Reprodutivo" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
       <div class="absolute bottom-0 bg-black/60 w-full py-2 text-center">
         <p class="text-white font-semibold text-sm">Planejamento Reprodutivo</p>
       </div>
     </div>
 
-    <div class="relative group overflow-hidden rounded-lg shadow-lg border border-white/10 bg-white/10">
-      <img src="/images/papel de plastico" alt="Supervisão de ACS" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
+    <div class="relative group overflow-hidden rounded-lg border-2 border-yellow-400">
+      <img src="/Img/Supervisão de ACS.jpg" alt="Supervisão de ACS" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
       <div class="absolute bottom-0 bg-black/60 w-full py-2 text-center">
         <p class="text-white font-semibold text-sm">Supervisão de ACS</p>
       </div>
     </div>
 
-    <div class="relative group overflow-hidden rounded-lg shadow-lg border border-white/10 bg-white/10">
-      <img src="/images/enfarto" alt="Supervisão da Enfermagem" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
+    <div class="relative group overflow-hidden rounded-lg border-2 border-yellow-400">
+      <img src="/Img/Supervisão da enfermagem.jpeg" alt="Supervisão da Enfermagem" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
       <div class="absolute bottom-0 bg-black/60 w-full py-2 text-center">
         <p class="text-white font-semibold text-sm">Supervisão da Enfermagem</p>
       </div>
     </div>
 
-    <div class="relative group overflow-hidden rounded-lg shadow-lg border border-white/10 bg-white/10">
-      <img src="/images/coletadesanguedecastor" alt="Atividades Coletivas" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
+    <div class="relative group overflow-hidden rounded-lg border-2 border-yellow-400">
+      <img src="/Img/Atividades coletivas.jpg" alt="Atividades Coletivas" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
       <div class="absolute bottom-0 bg-black/60 w-full py-2 text-center">
         <p class="text-white font-semibold text-sm">Atividades Coletivas</p>
       </div>
     </div>
-  </div>
-
-  <div class="mt-12 text-center">
-    <a href="#contact" class="bg-white text-[#1b2a4b] font-semibold px-6 py-3 rounded-full shadow hover:bg-gray-200 transition">
-      Ver todos os conteúdos
-    </a>
   </div>
 </section>
 
@@ -183,13 +212,13 @@
 <section class="bg-white py-20 px-6 md:px-20 text-gray-800">
   <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-start">
     <div>
-      <p class="uppercase text-sm font-bold text-gray-600 tracking-widest mb-3">Como somos diferentes</p>
       <h2 class="text-4xl font-bold font-serif mb-6">
-        Elevamos o padrão.
+        Por que a Mentoria Lidera ESF é diferenciada?
       </h2>
-      <p class="text-lg text-gray-700 mb-8">
-        Trazemos mais do que teoria: oferecemos ferramentas práticas, acesso direto e uma metodologia que transforma a rotina da equipe da Atenção Primária.
+      <p class="text-lg text-gray-700 mb-4">
+        Porque criamos uma mentoria prática, acessível e 100% focada na realidade do enfermeiro da ESF. Entregamos direção, clareza e ferramentas que funcionam no dia a dia da UBS.
       </p>
+      <p class="uppercase text-sm font-bold text-black-600 tracking-widest mb-12 mt-0"> Você não precisa mais liderar no escuro.</p>
       <a href="#contact" 
          class="bg-[#3EF5C1] hover:bg-[#2dddb1] text-black font-bold px-8 py-3 rounded-full shadow-md transition">
         Fale Conosco
@@ -198,53 +227,52 @@
 
 
     <!-- LISTINHAS -->
-    <div class="space-y-8">
-      <!-- Item 01 -->
-      <div class="flex items-start gap-4">
-        <span class="text-3xl">📱</span>
-        <div>
-          <h3 class="text-xl font-semibold">Fácil e intuitivo</h3>
-          <p class="text-gray-600">
-            Desenvolvido para ser simples, direto e adaptado à realidade da UBS, mesmo com pouco tempo e muitos desafios.
-          </p>
-        </div>
-      </div>
-
-      <!-- Item 02 -->
-      <div class="flex items-start gap-4">
-        <span class="text-3xl">🤝</span>
-        <div>
-          <h3 class="text-xl font-semibold">Mais que tutoriais</h3>
-          <p class="text-gray-600">
-            Oferecemos orientação humanizada, pensada por profissionais que já passaram pela prática do território.
-          </p>
-        </div>
-      </div>
-
-      <!-- Item 03 -->
-      <div class="flex items-start gap-4">
-        <span class="text-3xl">👀</span>
-        <div>
-          <h3 class="text-xl font-semibold">Transparência de verdade</h3>
-          <p class="text-gray-600">
-            Conteúdos sem enrolação, diretos ao ponto e acessíveis para toda a equipe, promovendo autonomia e clareza.
-          </p>
-        </div>
-      </div>
-
-      <!-- Item 04 -->
-      <div class="flex items-start gap-4">
-        <span class="text-3xl">😊</span>
-        <div>
-          <h3 class="text-xl font-semibold">Mais que um material</h3>
-          <p class="text-gray-600">
-            Somos apoio contínuo no seu processo de liderar com mais leveza, segurança e propósito.
-          </p>
-        </div>
-      </div>
+<div class="space-y-8">
+  <!-- Item 01 -->
+  <div class="flex items-start gap-4">
+    <img src="Img/Feito.avif" alt="Feito" class="w-10 h-10 mt-1">
+    <div>
+      <h3 class="text-2xl font-bold">Feita por quem entende a realidade da ESF</h3>
+      <p class="text-gray-600">
+        Tudo na mentoria é pensado por quem vive os mesmos desafios que você: falta de tempo, excesso de funções, pouco apoio.
+      </p>
     </div>
   </div>
-</section>
+
+  <!-- Item 02 -->
+  <div class="flex items-start gap-4">
+    <img src="Img/Mais.png" alt="Mais" class="w-10 h-10 mt-1">
+    <div>
+      <h3 class="text-2xl font-bold">Mais do que aulas gravadas</h3>
+      <p class="text-gray-600">
+        Você terá acesso a conteúdos aplicáveis, um site com tudo que precisa para atuar na UBS, além de encontros com experts em temas relevantes e uma rede de apoio com enfermeiros de todo o Brasil.
+      </p>
+    </div>
+  </div>
+
+  <!-- Item 03 -->
+  <div class="flex items-start gap-4">
+    <img src="Img/Alvo.png" alt="alvo" class="w-10 h-10 mt-1">
+    <div>
+      <h3 class="text-2xl font-bold">Objetividade e organização que economizam seu tempo</h3>
+      <p class="text-gray-600">
+        Aqui você aprende o necessário — direto ao ponto, sem enrolação. Conteúdo dividido por temas, com passo a passo de aplicação.
+      </p>
+    </div>
+  </div>
+
+  <!-- Item 04 -->
+  <div class="flex items-start gap-4">
+    <img src="Img/icon-sorriso.png" alt="Ícone sorriso" class="w-8 h-8 mt-1">
+    <div>
+      <h3 class="text-2xl font-bold">Honestidade e acolhimento de verdade</h3>
+      <p class="text-gray-600">
+        Nada de promessas impossíveis. Aqui a proposta é te dar segurança, companhia e ferramentas para liderar com leveza, segurança e resolutividade.
+      </p>
+    </div>
+  </div>
+</div>
+
 
 
 <!-- COMO TUDO TÁ FUNCIONANDO (COMO A GENTE QUER QUE SEJA) -->
