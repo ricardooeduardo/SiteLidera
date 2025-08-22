@@ -14,9 +14,25 @@
       h1, h2, h3, h4 {
         font-family: 'Playfair Display', serif;
       }
-    </style>
 
-    <!-- Cabeçalho!! da cabeça -->
+      .slide-in-left {
+        opacity: 0;
+        transform: translateX(-30px);
+        animation: slide-in-left 3s forwards;
+        animation-timing-function: ease-out;
+      }
+
+      .slide-in-left.delay {
+        animation-delay: 1.6s;
+      }
+
+      @keyframes slide-in-left {
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    </style>
   </head>
   <body class="text-gray-800">
 <header class="bg-[#204C79] text-white shadow-sm border-b border-white/20">
@@ -35,14 +51,11 @@
       <a href="#home" class="hover:underline">Início</a>
       <a href="#services" class="hover:underline">Locais</a>
       <a href="#portfolio" class="hover:underline">Projetos</a>
-      <a href="#team" class="hover:underline">Sobre</a>
+      <a href="sobre.html" class="hover:underline">Sobre</a>
       <a href="#contact" class="hover:underline">Contato</a>
     </nav>
   </div>
 </header>
-
-<!-- Linha branca entre cabeçalho e banner -->
-<div style="height: 2px; background-color: white;"></div>
 
 <!-- Acionamento para o mobilezão -->
 <script>
@@ -54,22 +67,21 @@
   });
 </script>
 
-<!-- Banner Principal com Carrossel -->
+<!-- Banner Principal com imagem fixa de fundo -->
 <section id="home" class="relative min-h-screen flex items-center justify-center px-6 md:px-20 overflow-hidden">
 
-  <!-- Carrossel bolado -->
-  <div id="carousel-bg" class="absolute inset-0 z-0 transition-opacity duration-1000 bg-cover bg-center"
-    style="background-image: url('/Img/Hipertenso.png');">
+  <!-- Imagem de fundo fixa -->
+  <div class="absolute inset-0 z-0 bg-cover bg-center"
+    style="background-image: url('/Img/ ');">
   </div>
   <div class="absolute inset-0 bg-black/30 z-0"></div>
 
   <!-- Quadradão do botão -->
   <div class="relative z-10 bg-white/90 backdrop-blur-md rounded-xl shadow-lg p-8 md:p-16 max-w-7xl w-full flex flex-col md:flex-row items-center justify-between gap-10">
     <div class="md:w-1/2 text-center md:text-left">
-      </p>
       <h1 class="text-4xl md:text-5xl font-serif font-semibold text-[#214066] leading-tight mb-4">
-        Enfermeiro(a) de Saúde da Família,<br class="hidden md:block">
-        chega de se virar sozinho(a)!
+        <span class="slide-in-left">Enfermeiro(a) de Saúde da Família,</span><br class="hidden md:block" />
+        <span class="slide-in-left delay">chega de se virar sozinho(a)!</span>
       </h1>
     </div>
     <div class="md:w-1/2 text-center md:text-left">
@@ -83,36 +95,8 @@
     </div>
   </div>
 </section>
-<div style="height: 2px; background-color: white;"></div>
-
-<script>
-  const images = [
-    'Img/1.webp',
-    'Img/2.png',
-    'Img/3.jpg',
-    'Img/4.jpg',
-    'Img/5.png',
-    'Img/6.jpg',
-    'Img/7.webp',
-    'Img/8.jpg',
-    'Img/9.jpg',
-    'Img/10.jpg'
-  ];
-
-  let current = 0;
-  const carousel = document.getElementById('carousel-bg');
-
-  setInterval(() => {
-    current = (current + 1) % images.length;
-    carousel.style.opacity = 0;
-
-    setTimeout(() => {
-      carousel.style.backgroundImage = `url('${images[current]}')`;
-      carousel.style.opacity = 1;
-    }, 500);
-  }, 2100);
-</script>
-
+</body>
+</html>
 
   <!-- Serviço da muié -->
 <section class="relative bg-[#1b2a4b] text-white py-20 px-6 md:px-20 overflow-hidden">
@@ -124,9 +108,10 @@
   </svg>
 
   <div class="relative z-10 max-w-7xl mx-auto text-center mb-8">
-    <h2 class="text-3xl md:text-4xl font-bold font-serif mb-3 whitespace-nowrap">
-      Fortaleça seu conhecimento nas principais áreas da Atenção Primária
-    </h2>
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold font-serif mb-3 sm:whitespace-normal md:whitespace-nowrap">
+  Fortaleça seu conhecimento nas principais áreas da Atenção Primária
+</h2>
+
     <p class="text-lg text-gray-300">
       Aprofunde-se nos temas que impactam diretamente sua prática na UBS
     </p>
@@ -135,71 +120,71 @@
   <div class="relative z-10 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 gap-6 max-w-6xl mx-auto">
     
     <!-- Cartãozinho -->
-    <div class="relative group overflow-hidden rounded-lg border-2 border-yellow-400">
+    <div class="relative group overflow-hidden rounded-lg">
       <img src="/Img/Saude da mulher.jpg" alt="Saúde da Mulher" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
       <div class="absolute bottom-0 bg-black/60 w-full py-2 text-center">
         <p class="text-white font-semibold text-sm">Saúde da Mulher</p>
       </div>
     </div>
 
-    <div class="relative group overflow-hidden rounded-lg border-2 border-yellow-400">
+    <div class="relative group overflow-hidden rounded-lg">
       <img src="/Img/Puericultura.png" alt="Puericultura" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
       <div class="absolute bottom-0 bg-black/60 w-full py-2 text-center">
         <p class="text-white font-semibold text-sm">Puericultura</p>
       </div>
     </div>
 
-    <div class="relative group overflow-hidden rounded-lg border-2 border-yellow-400">
+    <div class="relative group overflow-hidden rounded-lg">
       <img src="/img/Hipertenso.png" alt="Hipertenso" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
       <div class="absolute bottom-0 bg-black/60 w-full py-2 text-center">
         <p class="text-white font-semibold text-sm">Hipertenso</p>
       </div>
     </div>
 
-    <div class="relative group overflow-hidden rounded-lg border-2 border-yellow-400">
+    <div class="relative group overflow-hidden rounded-lg">
       <img src="/Img/Diabético.webp" alt="Diabético" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
       <div class="absolute bottom-0 bg-black/60 w-full py-2 text-center">
         <p class="text-white font-semibold text-sm">Diabético</p>
       </div>
     </div>
 
-    <div class="relative group overflow-hidden rounded-lg border-2 border-yellow-400">
+    <div class="relative group overflow-hidden rounded-lg">
       <img src="/Img/Saúde do Idoso.jpeg" alt="Saúde do Idoso" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
       <div class="absolute bottom-0 bg-black/60 w-full py-2 text-center">
         <p class="text-white font-semibold text-sm">Saúde do Idoso</p>
       </div>
     </div>
 
-    <div class="relative group overflow-hidden rounded-lg border-2 border-yellow-400">
-      <img src="/Img/Planejamento estratégico em saúde.png" alt="Planejamento Estratégico" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
+    <div class="relative group overflow-hidden rounded-lg">
+      <img src="/Img/" alt="Planejamento Estratégico" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
       <div class="absolute bottom-0 bg-black/60 w-full py-2 text-center">
         <p class="text-white font-semibold text-sm">Planejamento Estratégico</p>
       </div>
     </div>
 
-    <div class="relative group overflow-hidden rounded-lg border-2 border-yellow-400">
-      <img src="/Img/Planejamento Reprodutivo.jpg" alt="Planejamento Reprodutivo" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
+    <div class="relative group overflow-hidden rounded-lg">
+      <img src="/Img/" alt="Planejamento Reprodutivo" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
       <div class="absolute bottom-0 bg-black/60 w-full py-2 text-center">
         <p class="text-white font-semibold text-sm">Planejamento Reprodutivo</p>
       </div>
     </div>
 
-    <div class="relative group overflow-hidden rounded-lg border-2 border-yellow-400">
-      <img src="/Img/Supervisão de ACS.jpg" alt="Supervisão de ACS" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
+    <div class="relative group overflow-hidden rounded-lg">
+      <img src="/Img/" alt="Supervisão de ACS" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
       <div class="absolute bottom-0 bg-black/60 w-full py-2 text-center">
         <p class="text-white font-semibold text-sm">Supervisão de ACS</p>
       </div>
     </div>
 
-    <div class="relative group overflow-hidden rounded-lg border-2 border-yellow-400">
-      <img src="/Img/Supervisão da enfermagem.jpeg" alt="Supervisão da Enfermagem" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
+    <div class="relative group overflow-hidden rounded-lg">
+      <img src="/Img/" alt="Supervisão da Enfermagem" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
       <div class="absolute bottom-0 bg-black/60 w-full py-2 text-center">
         <p class="text-white font-semibold text-sm">Supervisão da Enfermagem</p>
       </div>
     </div>
 
-    <div class="relative group overflow-hidden rounded-lg border-2 border-yellow-400">
-      <img src="/Img/Atividades coletivas.jpg" alt="Atividades Coletivas" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
+    <div class="relative group overflow-hidden rounded-lg">
+      <img src="/Img/" alt="Atividades Coletivas" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
       <div class="absolute bottom-0 bg-black/60 w-full py-2 text-center">
         <p class="text-white font-semibold text-sm">Atividades Coletivas</p>
       </div>
@@ -220,8 +205,8 @@
       </p>
       <p class="uppercase text-sm font-bold text-black-600 tracking-widest mb-12 mt-0"> Você não precisa mais liderar no escuro.</p>
       <a href="#contact" 
-         class="bg-[#3EF5C1] hover:bg-[#2dddb1] text-black font-bold px-8 py-3 rounded-full shadow-md transition">
-        Fale Conosco
+         class="inline-block bg-[#214066] hover:bg-[#1a3250] text-white font-bold px-8 py-3 rounded-full transition duration-300">
+        Saiba mais?
       </a>
     </div>
 
@@ -280,34 +265,34 @@
   <div class="max-w-7xl mx-auto text-center">
     <h2 class="text-4xl font-bold font-serif text-gray-800 mb-12">Como Funciona a Mentoria Lidera ESF</h2>
     <div class="bg-black text-white rounded-2xl p-10 md:p-16 space-y-10 relative overflow-hidden">
-      <div class="hidden md:block absolute top-20 left-16 right-16 h-px bg-[#3EF5C1] z-0"></div>
+      <div class="hidden md:block absolute top-20 left-16 right-16 h-px bg-[#214066] z-0"></div>
       <div class="grid md:grid-cols-4 gap-12 relative z-10">
 
         <!-- Etapa 1 -->
         <div class="flex flex-col items-center">
-          <div class="bg-[#3EF5C1] text-black font-bold w-14 h-14 flex items-center justify-center rounded-full text-xl mb-4 z-10">1</div>
-          <h3 class="font-semibold text-lg mb-2">Acesse a plataforma</h3>
-          <p class="text-sm text-gray-300">Após sua inscrição tenha acesso imediato à área exclusiva da mentoria com todos os módulos organizados por temas da ESF. Todo mês novas aulas são inseridas, tornando ela cada vez mais completa.</p>
+          <div class="inline-block bg-[#214066] hover:bg-[#1a3250] text-white font-bold w-14 h-14 flex items-center justify-center rounded-full text-xl mb-4 z-10">1</div>
+          <h3 class="text-2xl font-semibold text-lg mb-2">Acesse a plataforma</h3>
+          <p class="text-1xl text-sm text-gray-300">Após sua inscrição tenha acesso imediato à área exclusiva da mentoria com todos os módulos organizados por temas da ESF. Todo mês novas aulas são inseridas, tornando ela cada vez mais completa.</p>
         </div>
 
         <!-- Etapa 2 -->
         <div class="flex flex-col items-center">
-          <div class="bg-[#3EF5C1] text-black font-bold w-14 h-14 flex items-center justify-center rounded-full text-xl mb-4 z-10">2</div>
-          <h3 class="font-semibold text-lg mb-2">Estude no seu ritmo</h3>
-          <p class="text-sm text-gray-300">Assista às aulas gravadas de forma flexível, conforme sua rotina. Todos os conteúdos são práticos, objetivos e aplicáveis à UBS.</p>
+          <div class="inline-block bg-[#214066] hover:bg-[#1a3250] text-white font-bold w-14 h-14 flex items-center justify-center rounded-full text-xl mb-4 z-10">2</div>
+          <h3 class="text-2xl font-semibold text-lg mb-2">Estude no seu ritmo</h3>
+          <p class="text-1xl text-sm text-gray-300">Assista às aulas gravadas de forma flexível, conforme sua rotina. Todos os conteúdos são práticos, objetivos e aplicáveis à UBS.</p>
         </div>
 
         <!-- Etapa 3 -->
         <div class="flex flex-col items-center">
-          <div class="bg-[#3EF5C1] text-black font-bold w-14 h-14 flex items-center justify-center rounded-full text-xl mb-4 z-10">3</div>
-          <h3 class="font-semibold text-lg mb-2">Use os materiais de apoio</h3>
+          <div class="inline-block bg-[#214066] hover:bg-[#1a3250] text-white font-bold w-14 h-14 flex items-center justify-center rounded-full text-xl mb-4 z-10">3</div>
+          <h3 class="text-2xl font-semibold text-lg mb-2">Use os materiais de apoio</h3>
           <p class="text-sm text-gray-300">VAcesse o Guia do Enfermeiro de Saúde da Família, um site com roteiros de atendimento, protocolos, prescrições, tabelas prontos para facilitar seus atendimentos, registros e organização da equipe.</p>
         </div>
 
         <!-- Etapa 4 -->
         <div class="flex flex-col items-center">
-          <div class="bg-[#3EF5C1] text-black font-bold w-14 h-14 flex items-center justify-center rounded-full text-xl mb-4 z-10">4</div>
-          <h3 class="font-semibold text-lg mb-2">Participe da rede</h3>
+          <div class="inline-block bg-[#214066] hover:bg-[#1a3250] text-white font-bold w-14 h-14 flex items-center justify-center rounded-full text-xl mb-4 z-10">4</div>
+          <h3 class="text-2xl font-semibold text-lg mb-2">Participe da rede</h3>
           <p class="text-sm text-gray-300">Conecte-se com outros enfermeiros da ESF no grupo exclusivo e nos encontros online mensais. Compartilhe dúvidas, estratégias e vivências reais da APS.</p>
         </div>
       </div>
@@ -315,14 +300,14 @@
       <!-- CÊ É BURRO E AINDA QUER AJUDA? -->
       <div class="bg-white text-black rounded-xl shadow-lg p-6 md:p-8 text-left mt-10 max-w-3xl mx-auto flex items-start gap-4">
         <div>
-          <h4 class="font-semibold text-lg mb-1">Conte com apoio, sempre que precisar</h4>
-          <p class="text-sm text-gray-700">
+          <h4 class="text-2xl font-semibold text-lg mb-1">Conte com apoio, sempre que precisar</h4>
+          <p class="text-3xl text-sm text-gray-900">
             Você não está sozinha(o). Nossa equipe está aqui para te apoiar na prática e fortalecer sua liderança na atenção primária.
           </p>
         </div>
       </div>
       <div class="mt-10">
-        <a href="#contact" class="inline-block bg-[#3EF5C1] hover:bg-[#2dddb1] text-black font-bold px-10 py-3 rounded-full transition">
+        <a href="#contact" class="inline-block bg-[#214066] hover:bg-[#1a3250] text-white font-bold px-10 py-3 rounded-full transition">
           Comece agora
         </a>
       </div>
@@ -332,9 +317,17 @@
 
 
     <!-- Equipe (VOU TER QUE FAZER UM CARRUSEU NESSA MERDA) -->
-<section id="team" class="py-16 px-6 bg-white">
-  <h2 class="text-4xl font-bold ml-72 mb-2">É uma nova forma de viver a Enfermagem na ESF.</h2>
-  <p class="text-left text-xl text-gray-600 ml-72 mb-10">Enfermeiras de todo o Brasil estão ganhando mais segurança, organização e propósito na sua prática. <span class="text-2xl text-pink-700 font-semibold">#lideranaesf</span></p>
+     
+<section id="team" class="py-12 px-4 md:py-16 md:px-6 bg-white">
+  <h2 class="text-2xl md:text-4xl font-bold text-center md:text-left md:ml-72 mb-4">
+    É uma nova forma de viver a Enfermagem na ESF.
+  </h2>
+  
+  <p class="text-base md:text-xl text-gray-600 text-center md:text-left md:ml-72 mb-8">
+    Enfermeiras de todo o Brasil estão ganhando mais segurança, organização e propósito na sua prática.
+    <span class="text-lg md:text-2xl text-pink-700 font-semibold">#lideranaesf</span>
+  </p>
+
   <div class="swiper teamSwiper max-w-7xl mx-auto px-4">
     <div class="swiper-wrapper">
 
@@ -423,11 +416,11 @@
     <div class="mb-12 md:mb-0">
       <h2 class="text-3xl md:text-4xl font-bold mb-6">
         E então, para onde vamos agora, Enfermeira?
-        <p class="text-left text-xl text-gray-600 mt-4 mb-10">Você pode continuar se virando sozinha…<br>
+        <p class="text-left text-xl text-gray-200 mt-4 mb-10">Você pode continuar se virando sozinha…<br>
  Ou pode escolher trilhar um caminho com clareza, apoio e direção.</p>
 
       </h2>
-      <button class="bg-emerald-400 hover:bg-emerald-500 text-black font-bold py-3 px-8 rounded-full transition">
+      <button class="inline-block bg-[#214066] hover:bg-[#1a3250] text-white font-bold py-3 px-8 rounded-full transition">
         Comece sua Jornada com a mentoria Lidera ESF
       </button>
     </div>
@@ -460,9 +453,9 @@
 
       <p class="mb-2">📩 Fale com a gente:</p>
       <ul class="space-y-1">
-        <li><a href="#" class="text-emerald-400 hover:underline">Envie uma mensagem</a></li>
-        <li><a href="#" class="text-emerald-400 hover:underline">Chame no WhatsApp</a></li>
-        <li><a href="mailto:contato@lideraesf.com.br" class="text-emerald-400 hover:underline">Envie um e-mail</a></li>
+        <li><a href="#" class="text-white text-[#1a3250] hover:underline">Envie uma mensagem</a></li>
+        <li><a href="#" class="text-white text-[#1a3250] hover:underline">Chame no WhatsApp</a></li>
+        <li><a href="mailto:contato@lideraesf.com.br" class="text-white text-[#1a3250] hover:underline">Envie um e-mail</a></li>
       </ul>
   <div class="flex space-x-4 items-center">
     <!-- Substitua os src pelos caminhos reais das imagens -->
@@ -483,7 +476,7 @@
 
     <!-- COLUNA 2: Recursos -->
     <div>
-      <h3 class="text-emerald-400 font-bold uppercase mb-3" style="font-family: Arial, sans-serif;"> Recursos</h3>
+      <h3 class="text-white text-[#1a3250] font-bold uppercase mb-3" style="font-family: Arial, sans-serif;"> Recursos</h3>
       <ul class="space-y-1">
         <li>Aulas por temas da ESF</li>
         <li>Guias práticos do Enfermeiro</li>
@@ -496,7 +489,7 @@
 
     <!-- COLUNA 3: Para Enfermeiros -->
     <div>
-      <h3 class="text-emerald-400 font-bold uppercase mb-3" style="font-family: Arial, sans-serif;"> Para Enfermeiros</h3>
+      <h3 class="text-white text-[#1a3250] font-bold uppercase mb-3" style="font-family: Arial, sans-serif;"> Para Enfermeiros</h3>
       <ul class="space-y-1">
         <li>Comunidade de apoio</li>
         <li>Encontros ao vivo</li>
@@ -509,7 +502,7 @@
 
     <!-- COLUNA 4: Sobre a Mentoria -->
     <div>
-      <h3 class="text-emerald-400 font-bold uppercase mb-3" style="font-family: Arial, sans-serif;"> Sobre a Mentoria</h3>
+      <h3 class="text-white text-[#1a3250] font-bold uppercase mb-3" style="font-family: Arial, sans-serif;"> Sobre a Mentoria</h3>
       <ul class="space-y-1">
         <li>Quem somos</li>
         <li>Como funciona</li>
