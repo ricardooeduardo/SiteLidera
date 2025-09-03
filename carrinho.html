@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finalizar Compra - LIDERA ESF</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="text-gray-800 bg-gray-50">
+
+  <!-- Cabeçalho -->
+  <header class="bg-[#204C79] text-white shadow-sm border-b border-white/20">
+    <div class="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
+      <a href="#home">
+        <img src="Img/Logo Lidera.png" alt="Logo Lidera ESF" class="h-16">
+      </a>
+
+      <!-- Botão do mobile -->
+      <button id="menu-toggle" class="md:hidden text-white text-3xl focus:outline-none">
+        ☰
+      </button>
+
+      <!-- Navegação -->
+      <nav id="mobile-menu" class="hidden md:flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-5 text-lg absolute md:static top-full left-0 w-full md:w-auto bg-[#214F78] md:bg-transparent px-6 py-4 md:py-0 z-50">
+        <a href="#home" class="hover:underline">Início</a>
+        <a href="#services" class="hover:underline">Locais</a>
+        <a href="#portfolio" class="hover:underline">Projetos</a>
+        <a href="sobre.html" class="hover:underline">Sobre</a>
+        <a href="#contact" class="hover:underline">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 p-6">
+
+    <!-- Coluna Esquerda de pagamento -->
+    <section class="lg:col-span-2 bg-white rounded-2xl shadow p-6">
+      <h2 class="text-2xl font-bold mb-6">Finalizar compra</h2>
+
+      <!-- Forma de pagamentoo -->
+      <h3 class="text-lg font-semibold mb-3">Forma de pagamento</h3>
+      <div class="space-y-3">
+        <label class="flex items-center border rounded-md p-3 cursor-pointer">
+          <input type="radio" name="pagamento" class="mr-3"> Pix
+        </label>
+        <label class="flex items-center border rounded-md p-3 cursor-pointer">
+          <input type="radio" name="pagamento" class="mr-3"> Cartão de crédito/débito
+        </label>
+      </div>
+
+      <!-- Detalhes do pedido -->
+      <div id="order-details" class="mt-6 hidden">
+        <h3 class="font-semibold mb-2">Curso selecionado</h3>
+        <div id="cart-items" class="space-y-3"></div>
+      </div>
+    </section>
+
+    <!-- Coluna da Direita  -->
+    <aside id="cart-summary" class="bg-white rounded-2xl shadow p-6 h-fit hidden">
+      <h3 class="text-lg font-bold mb-4">Resumo do pedido</h3>
+      <ul id="summary-list" class="text-sm space-y-2"></ul>
+
+      <div id="summary-total" class="flex justify-between font-bold text-lg mt-4"></div>
+
+      <button id="checkout-btn" class="w-full bg-[#204C79] hover:bg-purple-800 text-white font-semibold rounded-lg px-4 py-3 mt-6">
+        🔒 Pagar
+      </button>
+
+      <p class="text-xs text-gray-500 mt-3">
+        Ao concluir sua compra, você concorda com os Termos de Uso.
+      </p>
+    </aside>
+  </main>
+
+  <script>
+    // para o mobilizaço
+    const toggleBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    toggleBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    let cart = [
+      {
+        nome: "Curso de enfermagem LIDERA ESF",
+        preco: 140.00
+      }
+    ];
+
+    function renderCart() {
+      const orderDetails = document.getElementById("order-details");
+      const cartSummary = document.getElementById("cart-summary");
+      const cartItems = document.getElementById("cart-items");
+      const summaryList = document.getElementById("summary-list");
+      const summaryTotal = document.getElementById("summary-total");
+      const checkoutBtn = document.getElementById("checkout-btn");
+
+      if (cart.length === 0) {
+        orderDetails.classList.add("hidden");
+        cartSummary.classList.add("hidden");
+        return;
+      }
+
+      orderDetails.classList.remove("hidden");
+      cartSummary.classList.remove("hidden");
+
+      cartItems.innerHTML = "";
+      summaryList.innerHTML = "";
+
+      let total = 0;
+
+      cart.forEach((item, index) => {
+        total += item.preco;
+
+        // para o item do carrinho
+        let div = document.createElement("div");
+        div.className = "flex items-center justify-between border rounded-lg p-3";
+        div.innerHTML = `
+          <div class="flex items-center gap-3">
+            <div class="w-14 h-14 bg-gray-300 rounded-md"></div>
+            <span class="text-sm font-medium">${item.nome}</span>
+          </div>
+          <div class="text-sm text-right">
+            <span class="font-semibold">R$ ${item.preco.toFixed(2)}</span><br>
+            <button onclick="removeFromCart(${index})" class="text-red-500 text-xs underline mt-1">❌ Remover</button>
+          </div>
+        `;
+        cartItems.appendChild(div);
+
+        summaryList.innerHTML += `
+          <li class="flex justify-between">
+            <span>${item.nome}</span> 
+            <span>R$ ${item.preco.toFixed(2)}</span>
+          </li>
+          <hr>
+        `;
+      });
+
+      summaryTotal.innerHTML = `<span>Total (${cart.length} curso${cart.length > 1 ? 's' : ''}):</span> <span>R$ ${total.toFixed(2)}</span>`;
+      checkoutBtn.textContent = `🔒 Pagar R$ ${total.toFixed(2)}`;
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      renderCart();
+    }
+
+    renderCart();
+  </script>
+
+</body>
+</html>

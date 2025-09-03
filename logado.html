@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel do Aluno - Mentoria LIDERA ESF</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+<!-- Header -->
+<header class="bg-[#204C79] text-white shadow-sm border-b border-white/20">
+  <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+    <a href="#home">
+      <img src="Img/Logo Lidera.png" alt="Logo Lidera ESF" style="height: 70px; width: auto;">
+    </a>
+    <nav class="space-x-6 hidden md:flex text-lg">
+      <a href="#progresso" class="hover:underline">Progresso</a>
+      <a href="#materiais" class="hover:underline">Materiais</a>
+      <a href="#videoaulas" class="hover:underline">Videoaulas</a>
+      <a href="logout.html" class="hover:underline text-red-300">Sair</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Main -->
+<main class="max-w-7xl mx-auto p-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+  <!-- Coluna da esquerda (Progresso) -->
+  <section id="progresso" class="lg:col-span-2 bg-white shadow rounded-2xl p-6">
+    <h2 class="text-3xl font-bold mb-4 text-[#204C79]">Seu Progresso</h2>
+
+    <!-- Aula 1 -->
+    <div class="mb-4">
+      <p class="font-medium">Aula 1: Introdução à ESF</p>
+      <div class="w-full bg-gray-200 rounded-full h-4 mt-2">
+        <div class="bg-[#204C79] h-4 rounded-full" style="width: 80%;"></div>
+      </div>
+      <p class="text-sm text-gray-500 mt-1">80% concluído</p>
+    </div>
+
+    <!-- Aula 2 -->
+    <div class="mb-4">
+      <p class="font-medium">Aula 2: Pré-natal na Atenção Básica</p>
+      <div class="w-full bg-gray-200 rounded-full h-4 mt-2">
+        <div class="bg-[#204C79] h-4 rounded-full" style="width: 40%;"></div>
+      </div>
+      <p class="text-sm text-gray-500 mt-1">40% concluído</p>
+    </div>
+
+    <!-- Aula 3 -->
+    <div class="mb-4">
+      <p class="font-medium">Aula 3: Saúde do Idoso</p>
+      <div class="w-full bg-gray-200 rounded-full h-4 mt-2">
+        <div class="bg-[#204C79] h-4 rounded-full" style="width: 0%;"></div>
+      </div>
+      <p class="text-sm text-gray-500 mt-1">Não iniciado</p>
+    </div>
+  </section>
+
+  <!-- Coluna da direita (Materiais + Videoaulas) -->
+  <aside class="space-y-6">
+
+    <!-- Materiais -->
+    <div id="materiais" class="bg-white shadow rounded-2xl p-6">
+      <h3 class="text-2xl font-bold mb-4 text-[#204C79]">📚 Materiais em PDF</h3>
+      <ul class="space-y-3">
+        <li><a href="pdfs/guia-introducao.pdf" class="text-blue-600 hover:underline">📄 Guia de Introdução</a></li>
+        <li><a href="pdfs/checklist-pre-natal.pdf" class="text-blue-600 hover:underline">📄 Checklist Pré-natal</a></li>
+        <li><a href="pdfs/saude-idoso.pdf" class="text-blue-600 hover:underline">📄 Saúde do Idoso</a></li>
+      </ul>
+    </div>
+
+    <!-- Videoaulas -->
+    <div id="videoaulas" class="bg-white shadow rounded-2xl p-6">
+      <h3 class="text-2xl font-bold mb-4 text-[#204C79]">🎥 Videoaulas</h3>
+      <div class="space-y-3">
+        <a href="videos/aula1.html" class="block bg-[#204C79] text-white rounded-lg px-4 py-3 text-center hover:bg-[#16324e]">▶ Aula 1: Introdução</a>
+        <a href="videos/aula2.html" class="block bg-[#204C79] text-white rounded-lg px-4 py-3 text-center hover:bg-[#16324e]">▶ Aula 2: Pré-natal</a>
+        <a href="videos/aula3.html" class="block bg-[#204C79] text-white rounded-lg px-4 py-3 text-center hover:bg-[#16324e]">▶ Aula 3: Saúde do Idoso</a>
+      </div>
+    </div>
+
+  </aside>
+</main>
+
+</body>
+</html>
