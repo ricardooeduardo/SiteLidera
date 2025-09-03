@@ -3,86 +3,302 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Painel do Aluno - Mentoria LIDERA ESF</title>
+  <title>Área do Aluno - Mentoria</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
 </head>
 <body class="bg-gray-100 text-gray-800">
 
-<!-- Header -->
-<header class="bg-[#204C79] text-white shadow-sm border-b border-white/20">
-  <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
-    <a href="#home">
-      <img src="Img/Logo Lidera.png" alt="Logo Lidera ESF" style="height: 70px; width: auto;">
-    </a>
-    <nav class="space-x-6 hidden md:flex text-lg">
-      <a href="#progresso" class="hover:underline">Progresso</a>
-      <a href="#materiais" class="hover:underline">Materiais</a>
-      <a href="#videoaulas" class="hover:underline">Videoaulas</a>
-      <a href="logout.html" class="hover:underline text-red-300">Sair</a>
-    </nav>
-  </div>
-</header>
+  <!-- Header -->
+  <header class="bg-[#204C79] text-white shadow-sm border-b border-white/20">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+      <a href="#">
+        <img src="Img/Logo Lidera.png" alt="Logo Lidera ESF" class="h-16">
+      </a>
+      <nav class="hidden md:flex space-x-6 text-lg">
+        <a href="#" class="hover:underline">Início</a>
+        <a href="#" class="hover:underline">Módulos</a>
+        <a href="#" class="hover:underline">Contato</a>
+      </nav>
+    </div>
+  </header>
 
-<!-- Main -->
-<main class="max-w-7xl mx-auto p-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+  <!-- Principal -->
+  <main class="max-w-7xl mx-auto p-6">
 
-  <!-- Coluna da esquerda (Progresso) -->
-  <section id="progresso" class="lg:col-span-2 bg-white shadow rounded-2xl p-6">
-    <h2 class="text-3xl font-bold mb-4 text-[#204C79]">Seu Progresso</h2>
+    <!-- Título -->
+    <h2 class="text-4xl font-bold text-center text-[#204C79] mb-10">
+       Módulos para Leitura
+    </h2>
 
-    <!-- Aula 1 -->
-    <div class="mb-4">
-      <p class="font-medium">Aula 1: Introdução à ESF</p>
-      <div class="w-full bg-gray-200 rounded-full h-4 mt-2">
-        <div class="bg-[#204C79] h-4 rounded-full" style="width: 80%;"></div>
+    <!-- Módulos + Busca -->
+    <section id="modulos" class="bg-white shadow rounded-2xl p-6">
+      <h2 class="text-3xl font-bold text-[#204C79] mb-6"> Módulos da Mentoria</h2>
+
+      <!-- busca -->
+      <input id="search" type="text" placeholder=" Buscar módulo..." 
+        class="w-full p-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none mb-6">
+
+      <!-- Grid de módulos -->
+      <div id="modulos-container" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- módulo em destaque -->
+        <div class="col-span-1 md:col-span-2 lg:col-span-3 bg-[#204C79] text-white rounded-3xl shadow-xl p-10 flex flex-col items-center justify-center text-center modulo-card" data-titulo="Comece por Aqui">
+          <h3 class="text-3xl font-bold mb-4">Comece por Aqui</h3>
+          <p class="text-lg opacity-90">Leia este módulo antes de seguir para os demais.</p>
+          <a href="#" class="mt-6 bg-white text-[#204C79] font-semibold px-6 py-3 rounded-2xl shadow hover:bg-gray-200 transition">
+            Acessar Módulo
+          </a>
+        </div>
+
+        <!-- Módulos 1 a 19 -->
+        <div class="modulo-card bg-gray-50 shadow rounded-xl p-6 hover:shadow-lg transition cursor-pointer" data-titulo="1 - Conceitos Básicos de APS">
+          <h3 class="font-semibold text-lg">1 - Conceitos Básicos de APS</h3>
+          <p class="text-sm text-gray-600">Fundamentos da Atenção Primária em Saúde e seu impacto no SUS.</p>
+        </div>
+        <div class="modulo-card bg-gray-50 shadow rounded-xl p-6 hover:shadow-lg transition cursor-pointer" data-titulo="2 - Legislação de APS">
+          <h3 class="font-semibold text-lg">2 - Legislação de APS</h3>
+          <p class="text-sm text-gray-600">Entenda as normas e leis que estruturam a APS.</p>
+        </div>
+        <div class="modulo-card bg-gray-50 shadow rounded-xl p-6 hover:shadow-lg transition cursor-pointer" data-titulo="3 - Planejamento em Saúde">
+          <h3 class="font-semibold text-lg">3 - Planejamento em Saúde</h3>
+          <p class="text-sm text-gray-600">Ferramentas para organizar e otimizar sua atuação.</p>
+        </div>
+        <div class="modulo-card bg-gray-50 shadow rounded-xl p-6 hover:shadow-lg transition cursor-pointer" data-titulo="4 - Vigilância no Território">
+          <h3 class="font-semibold text-lg">4 - Vigilância no Território</h3>
+          <p class="text-sm text-gray-600">Análise territorial para tomada de decisões em saúde.</p>
+        </div>
+        <div class="modulo-card bg-gray-50 shadow rounded-xl p-6 hover:shadow-lg transition cursor-pointer" data-titulo="5 - Carteira de Serviços da APS">
+          <h3 class="font-semibold text-lg">5 - Carteira de Serviços da APS</h3>
+          <p class="text-sm text-gray-600">Conheça os serviços ofertados pela APS.</p>
+        </div>
+        <div class="modulo-card bg-gray-50 shadow rounded-xl p-6 hover:shadow-lg transition cursor-pointer" data-titulo="6 - Cofinanciamento da APS">
+          <h3 class="font-semibold text-lg">6 - Cofinanciamento da APS</h3>
+          <p class="text-sm text-gray-600">Aspectos financeiros e recursos da atenção primária.</p>
+        </div>
+        <div class="modulo-card bg-gray-50 shadow rounded-xl p-6 hover:shadow-lg transition cursor-pointer" data-titulo="7 - Sistemas de Informação">
+          <h3 class="font-semibold text-lg">7 - Sistemas de Informação</h3>
+          <p class="text-sm text-gray-600">Ferramentas digitais para gestão e acompanhamento.</p>
+        </div>
+        <div class="modulo-card bg-gray-50 shadow rounded-xl p-6 hover:shadow-lg transition cursor-pointer" data-titulo="8 - Atribuições do Enfermeiro">
+          <h3 class="font-semibold text-lg">8 - Atribuições do Enfermeiro</h3>
+          <p class="text-sm text-gray-600">Principais responsabilidades do enfermeiro na ESF.</p>
+        </div>
+        <div class="modulo-card bg-gray-50 shadow rounded-xl p-6 hover:shadow-lg transition cursor-pointer" data-titulo="9 - Consulta de Enfermagem">
+          <h3 class="font-semibold text-lg">9 - Consulta de Enfermagem</h3>
+          <p class="text-sm text-gray-600">Condução eficaz da consulta de enfermagem na APS.</p>
+        </div>
+        <div class="modulo-card bg-gray-50 shadow rounded-xl p-6 hover:shadow-lg transition cursor-pointer" data-titulo="10 - Supervisão de ACS">
+          <h3 class="font-semibold text-lg">10 - Supervisão de ACS</h3>
+          <p class="text-sm text-gray-600">Supervisão e acompanhamento dos agentes comunitários.</p>
+        </div>
+        <div class="modulo-card bg-gray-50 shadow rounded-xl p-6 hover:shadow-lg transition cursor-pointer" data-titulo="11 - Supervisão de Equipe de Enfermagem">
+          <h3 class="font-semibold text-lg">11 - Supervisão de Equipe de Enfermagem</h3>
+          <p class="text-sm text-gray-600">Gestão e liderança da equipe de enfermagem.</p>
+        </div>
+        <div class="modulo-card bg-gray-50 shadow rounded-xl p-6 hover:shadow-lg transition cursor-pointer" data-titulo="12 - Atividades Administrativas">
+          <h3 class="font-semibold text-lg">12 - Atividades Administrativas</h3>
+          <p class="text-sm text-gray-600">Rotinas administrativas do enfermeiro na APS.</p>
+        </div>
+        <div class="modulo-card bg-gray-50 shadow rounded-xl p-6 hover:shadow-lg transition cursor-pointer" data-titulo="13 - Acolhimento">
+          <h3 class="font-semibold text-lg">13 - Acolhimento</h3>
+          <p class="text-sm text-gray-600">Práticas de acolhimento ao usuário no SUS.</p>
+        </div>
+        <div class="modulo-card bg-gray-50 shadow rounded-xl p-6 hover:shadow-lg transition cursor-pointer" data-titulo="14 - Atividades Coletivas">
+          <h3 class="font-semibold text-lg">14 - Atividades Coletivas</h3>
+          <p class="text-sm text-gray-600">Organização de grupos e atividades comunitárias.</p>
+        </div>
+        <div class="modulo-card bg-gray-50 shadow rounded-xl p-6 hover:shadow-lg transition cursor-pointer" data-titulo="15 - Processo de Trabalho">
+          <h3 class="font-semibold text-lg">15 - Processo de Trabalho</h3>
+          <p class="text-sm text-gray-600">Estruturação do processo de trabalho do enfermeiro.</p>
+        </div>
+        <div class="modulo-card bg-gray-50 shadow rounded-xl p-6 hover:shadow-lg transition cursor-pointer" data-titulo="16 - Princípios PICS">
+          <h3 class="font-semibold text-lg">16 - Princípios PICS</h3>
+          <p class="text-sm text-gray-600">Práticas integrativas e complementares em saúde.</p>
+        </div>
+        <div class="modulo-card bg-gray-50 shadow rounded-xl p-6 hover:shadow-lg transition cursor-pointer" data-titulo="17 - Legislação de Enfermagem">
+          <h3 class="font-semibold text-lg">17 - Legislação de Enfermagem</h3>
+          <p class="text-sm text-gray-600">Aspectos legais da prática do enfermeiro.</p>
+        </div>
+        <div class="modulo-card bg-gray-50 shadow rounded-xl p-6 hover:shadow-lg transition cursor-pointer" data-titulo="18 - Audiência Social">
+          <h3 class="font-semibold text-lg">18 - Audiência Social</h3>
+          <p class="text-sm text-gray-600">Papel da enfermagem no controle social do SUS.</p>
+        </div>
+<div class="modulo-card bg-gray-50 shadow rounded-xl p-6 hover:shadow-lg transition cursor-pointer col-span-full flex flex-col items-center justify-center text-center" 
+     data-titulo="19 - Educação em Saúde">
+  <h3 class="font-semibold text-lg">19 - Educação em Saúde</h3>
+  <p class="text-sm text-gray-600">Educação em saúde como estratégia de promoção.</p>
+</div>
+
+<!-- Grupo de Whatsapp -->
+<div class="modulo-card bg-[#204C79] text-white rounded-3xl shadow-xl p-8 col-span-full text-center hover:shadow-2xl transition cursor-pointer" 
+     data-titulo="19 - Educação em Saúde">
+  <h3 class="text-3xl font-bold mb-4">Grupo de WhatsApp LideraESF</h3>
+  <p class="text-lg opacity-90">Participe do nosso grupo exclusivo para alunos da Mentoria.</p>
+  <a href="#" class="mt-6 inline-block bg-white text-[#204C79] font-semibold px-8 py-4 rounded-2xl shadow hover:bg-gray-200 transition">
+    Acessar Grupo
+  </a>
+</div>
+
+<!-- Bloco: Protocolos de Enfermagem -->
+<a href="link-do-protocolo.html" class="modulo-card bg-[#204C79] text-white rounded-3xl shadow-xl p-6 col-span-full text-center hover:shadow-2xl transition cursor-pointer block">
+  <h3 class="text-xl font-bold mb-2">Protocolos de Enfermagem do Brasil</h3>
+</a>
+
+<!-- Bloco: Feedback do Guia com envio direto via EmailJS -->
+<form id="feedback-form" class="modulo-card bg-[#204C79] text-white rounded-3xl shadow-xl p-6 col-span-full text-center hover:shadow-2xl transition cursor-pointer block">
+  <h3 class="text-xl font-bold mb-2">Sentiu falta de algo aqui no guia??</h3>
+  <p class="text-lg opacity-90 mb-4">Conta aqui o que está faltando!</p>
+
+  <input type="text" name="user_name" placeholder="Seu nome" required
+         class="w-full mb-3 p-2 rounded-lg text-gray-800">
+  <input type="email" name="user_email" placeholder="Seu e-mail" required
+         class="w-full mb-3 p-2 rounded-lg text-gray-800">
+  <textarea name="message" placeholder="Escreva seu feedback" required
+            class="w-full mb-4 p-2 rounded-lg text-gray-800 h-24"></textarea>
+
+  <button type="submit" 
+          class="bg-white text-[#204C79] font-semibold px-6 py-2 rounded-xl shadow hover:bg-gray-200 transition">
+    Enviar Feedback
+  </button>
+</form>
+
+<!-- Script EmailJS -->
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function(){
+      emailjs.init("fNYtZvBWWYq7P3zhO"); // Chave pública (User ID)
+  })();
+
+  const form = document.getElementById('feedback-form');
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); // evita envio padrão
+
+    emailjs.sendForm('service_ii88jhi', 'template_jvuh1ej', this)
+      .then(() => {
+        alert('Feedback enviado com sucesso!');
+        form.reset();
+      }, (error) => {
+        alert('Erro ao enviar feedback. Tente novamente.');
+        console.error(error);
+      });
+  });
+</script>
+
+
+        </div>
+        </section>
+
+  </main>
+
+  <!-- Script de Busca -->
+  <script>
+    
+    function normalizeText(text) {
+      return text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    }
+
+    
+    const modulos = Array.from(document.querySelectorAll(".modulo-card")).map(card => ({
+      titulo: card.getAttribute("data-titulo"),
+      element: card
+    }));
+
+    
+    const fuse = new Fuse(modulos, { keys: ["titulo"], threshold: 0.4 });
+
+    
+    const searchInput = document.getElementById("search");
+    searchInput.addEventListener("input", () => {
+      const query = normalizeText(searchInput.value);
+
+      if (!query) {
+        modulos.forEach(m => m.element.classList.remove("hidden"));
+        return;
+      }
+
+      const resultados = fuse.search(query).map(r => r.item.titulo);
+
+      
+      modulos.forEach(m => m.element.classList.add("hidden"));
+
+      
+      modulos.forEach(m => {
+        if (resultados.includes(m.titulo)) {
+          m.element.classList.remove("hidden");
+        }
+      });
+    });
+  </script>
+
+  <!-- Footer -->
+  <footer class="bg-[#f3f4f6] pt-8">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 text-sm">
+      
+      <!-- COLUNA 1: Contato -->
+      <div>
+        <h2 class="text-lg font-bold uppercase mb-4" style="font-family: Arial, sans-serif;">
+          Estamos aqui para apoiar sua jornada na ESF
+        </h2>
+
+        <p class="mb-2">📩 Fale com a gente:</p>
+        <ul class="space-y-1">
+          <li><a href="#" class="text-[#1a3250] hover:underline">Envie uma mensagem</a></li>
+          <li><a href="#" class="text-[#1a3250] hover:underline">Chame no WhatsApp</a></li>
+          <li><a href="mailto:contato@lideraesf.com.br" class="text-[#1a3250] hover:underline">Envie um e-mail</a></li>
+        </ul>
+        <div class="flex space-x-4 items-center mt-3">
+          <a href="#" target="_blank"><img src="/img/instagram.png" alt="Instagram" class="w-6 h-6 hover:opacity-80 transition" /></a>
+          <a href="#" target="_blank"><img src="/img/facebook.png" alt="Facebook" class="w-6 h-6 hover:opacity-80 transition" /></a>
+          <a href="https://wa.me/5599999999999" target="_blank"><img src="/img/whatsapp.png" alt="WhatsApp" class="w-6 h-6 hover:opacity-80 transition" /></a>
+          <a href="#" target="_blank"><img src="/img/twitter.png" alt="Twitter" class="w-6 h-6 hover:opacity-80 transition" /></a>
+        </div>
       </div>
-      <p class="text-sm text-gray-500 mt-1">80% concluído</p>
-    </div>
 
-    <!-- Aula 2 -->
-    <div class="mb-4">
-      <p class="font-medium">Aula 2: Pré-natal na Atenção Básica</p>
-      <div class="w-full bg-gray-200 rounded-full h-4 mt-2">
-        <div class="bg-[#204C79] h-4 rounded-full" style="width: 40%;"></div>
+      <!-- COLUNA 2: Recursos -->
+      <div>
+        <h3 class="text-[#1a3250] font-bold uppercase mb-3" style="font-family: Arial, sans-serif;"> Recursos</h3>
+        <ul class="space-y-1">
+          <li>Aulas por temas da ESF</li>
+          <li>Guias práticos do Enfermeiro</li>
+          <li>Protocolos organizados</li>
+          <li>Modelos de evolução</li>
+          <li>Planejamentos e tabelas</li>
+          <li>Materiais para supervisão das equipes de ACS e enfermagem</li>
+        </ul>
       </div>
-      <p class="text-sm text-gray-500 mt-1">40% concluído</p>
-    </div>
 
-    <!-- Aula 3 -->
-    <div class="mb-4">
-      <p class="font-medium">Aula 3: Saúde do Idoso</p>
-      <div class="w-full bg-gray-200 rounded-full h-4 mt-2">
-        <div class="bg-[#204C79] h-4 rounded-full" style="width: 0%;"></div>
+      <!-- COLUNA 3: Para Enfermeiros -->
+      <div>
+        <h3 class="text-[#1a3250] font-bold uppercase mb-3" style="font-family: Arial, sans-serif;"> Para Enfermeiros</h3>
+        <ul class="space-y-1">
+          <li>Comunidade de apoio</li>
+          <li>Encontros ao vivo</li>
+          <li>Grupo de networking</li>
+          <li>Resumo dos indicadores</li>
+          <li>Estratégias de organização</li>
+          <li>Boas práticas para UBS</li>
+        </ul>
       </div>
-      <p class="text-sm text-gray-500 mt-1">Não iniciado</p>
-    </div>
-  </section>
 
-  <!-- Coluna da direita (Materiais + Videoaulas) -->
-  <aside class="space-y-6">
-
-    <!-- Materiais -->
-    <div id="materiais" class="bg-white shadow rounded-2xl p-6">
-      <h3 class="text-2xl font-bold mb-4 text-[#204C79]">📚 Materiais em PDF</h3>
-      <ul class="space-y-3">
-        <li><a href="pdfs/guia-introducao.pdf" class="text-blue-600 hover:underline">📄 Guia de Introdução</a></li>
-        <li><a href="pdfs/checklist-pre-natal.pdf" class="text-blue-600 hover:underline">📄 Checklist Pré-natal</a></li>
-        <li><a href="pdfs/saude-idoso.pdf" class="text-blue-600 hover:underline">📄 Saúde do Idoso</a></li>
-      </ul>
-    </div>
-
-    <!-- Videoaulas -->
-    <div id="videoaulas" class="bg-white shadow rounded-2xl p-6">
-      <h3 class="text-2xl font-bold mb-4 text-[#204C79]">🎥 Videoaulas</h3>
-      <div class="space-y-3">
-        <a href="videos/aula1.html" class="block bg-[#204C79] text-white rounded-lg px-4 py-3 text-center hover:bg-[#16324e]">▶ Aula 1: Introdução</a>
-        <a href="videos/aula2.html" class="block bg-[#204C79] text-white rounded-lg px-4 py-3 text-center hover:bg-[#16324e]">▶ Aula 2: Pré-natal</a>
-        <a href="videos/aula3.html" class="block bg-[#204C79] text-white rounded-lg px-4 py-3 text-center hover:bg-[#16324e]">▶ Aula 3: Saúde do Idoso</a>
+      <!-- COLUNA 4: Sobre a Mentoria -->
+      <div>
+        <h3 class="text-[#1a3250] font-bold uppercase mb-3" style="font-family: Arial, sans-serif;"> Sobre a Mentoria</h3>
+        <ul class="space-y-1">
+          <li>Quem somos</li>
+          <li>Como funciona</li>
+          <li>Depoimentos de mentoradas</li>
+          <li>Política de acesso</li>
+          <li>Termos de uso</li>
+        </ul>
       </div>
     </div>
 
-  </aside>
-</main>
+    <!-- Rodapé final -->
+    <div class="text-center text-xs text-gray-500 mt-10 border-t pt-6">
+      © 2025 Lidera ESF. Todos os direitos reservados.
+    </div>
+  </footer>
 
 </body>
 </html>
