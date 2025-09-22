@@ -1,523 +1,686 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LIDERA ESF</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-    <style>
-      body {
-        font-family: 'Inter', sans-serif;
-        background-color: #f9f9f9;
-      }
-      h1, h2, h3, h4 {
-        font-family: 'Playfair Display', serif;
-      }
-
-      .slide-in-left {
-        opacity: 0;
-        transform: translateX(-30px);
-        animation: slide-in-left 3s forwards;
-        animation-timing-function: ease-out;
-      }
-
-      .slide-in-left.delay {
-        animation-delay: 1.6s;
-      }
-
-      @keyframes slide-in-left {
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-    </style>
-  </head>
-  <body class="text-gray-800">
-<header class="bg-[#204C79] text-white shadow-sm border-b border-white/20">
-  <div class="max-w-7xl mx-auto px-6 py-1 flex justify-between items-center">
-    <a href="#home">
-      <img src="Img/Logo Lidera.png" alt="Logo Lidera ESF" style="height: 100px; width: auto;">
-    </a>
-
-    <!-- Botão do mobilezão) -->
-    <button id="menu-toggle" class="md:hidden text-white text-3xl focus:outline-none">
-      ☰
-    </button>
-
-    <!-- Barrinha de navegação -->
-    <nav id="mobile-menu" class="hidden md:flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-5 text-lg absolute md:static top-full left-0 w-full md:w-auto bg-[#214F78] md:bg-transparent px-6 py-4 md:py-0 z-50">
-      <a href="#home" class="hover:underline">Início</a>
-      <a href="#services" class="hover:underline">Locais</a>
-      <a href="#portfolio" class="hover:underline">Projetos</a>
-      <a href="sobre.html" class="hover:underline">Sobre</a>
-      <a href="#contact" class="hover:underline">Contato</a>
-    </nav>
-  </div>
-</header>
-
-<!-- Acionamento para o mobilezão -->
-<script>
-  const toggleBtn = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-
-  toggleBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
-</script>
-
-<!-- Banner Principal com imagem fixa de fundo -->
-<section id="home" class="relative min-h-screen flex items-center justify-center px-6 md:px-20 overflow-hidden">
-
-  <!-- Imagem de fundo fixa -->
-  <div class="absolute inset-0 z-0 bg-cover bg-center"
-    style="background-image: url('/Img/ ');">
-  </div>
-  <div class="absolute inset-0 bg-black/30 z-0"></div>
-
-  <!-- Quadradão do botão -->
-  <div class="relative z-10 bg-white/90 backdrop-blur-md rounded-xl shadow-lg p-8 md:p-16 max-w-7xl w-full flex flex-col md:flex-row items-center justify-between gap-10">
-    <div class="md:w-1/2 text-center md:text-left">
-      <h1 class="text-4xl md:text-5xl font-serif font-semibold text-[#214066] leading-tight mb-4">
-        <span class="slide-in-left">Enfermeiro(a) de Saúde da Família,</span><br class="hidden md:block" />
-        <span class="slide-in-left delay">chega de se virar sozinho(a)!</span>
-      </h1>
-    </div>
-    <div class="md:w-1/2 text-center md:text-left">
-      <p class="text-2x1 text-gray-700 text-lg mb-6">
-        Aqui você encontra ferramentas que associam a teoria à prática da Unidade Básica de Saúde!
-      </p>
-      <a href="#contact" 
-         class="inline-block bg-[#214066] hover:bg-[#1a3250] text-white font-bold px-8 py-3 rounded-full transition duration-300">
-        Vamos começar?
-      </a>
-    </div>
-  </div>
-</section>
-</body>
-</html>
-
-  <!-- Serviço da muié -->
-<section class="relative bg-[#1b2a4b] text-white py-20 px-6 md:px-20 overflow-hidden">
-  
-  
-  <!-- Linha pontilhada SVG atrás dos cards -->
-  <svg class="absolute inset-0 w-full h-full z-0 pointer-events-none" viewBox="0 0 1000 200" preserveAspectRatio="none">
-    <path d="M0,100 Q250,0 500,100 T1000,100" fill="none" stroke="#ffffff44" stroke-width="2" stroke-dasharray="8 8"/>
-  </svg>
-
-  <div class="relative z-10 max-w-7xl mx-auto text-center mb-8">
-    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold font-serif mb-3 sm:whitespace-normal md:whitespace-nowrap">
-  Fortaleça seu conhecimento nas principais áreas da Atenção Primária
-</h2>
-
-    <p class="text-lg text-gray-300">
-      Aprofunde-se nos temas que impactam diretamente sua prática na UBS
-    </p>
-  </div>
-
-  <div class="relative z-10 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 gap-6 max-w-6xl mx-auto">
-    
-    <!-- Cartãozinho -->
-    <div class="relative group overflow-hidden rounded-lg">
-      <img src="/Img/Saude da mulher.jpg" alt="Saúde da Mulher" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
-      <div class="absolute bottom-0 bg-black/60 w-full py-2 text-center">
-        <p class="text-white font-semibold text-sm">Saúde da Mulher</p>
-      </div>
-    </div>
-
-    <div class="relative group overflow-hidden rounded-lg">
-      <img src="/Img/Puericultura.png" alt="Puericultura" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
-      <div class="absolute bottom-0 bg-black/60 w-full py-2 text-center">
-        <p class="text-white font-semibold text-sm">Puericultura</p>
-      </div>
-    </div>
-
-    <div class="relative group overflow-hidden rounded-lg">
-      <img src="/img/Hipertenso.png" alt="Hipertenso" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
-      <div class="absolute bottom-0 bg-black/60 w-full py-2 text-center">
-        <p class="text-white font-semibold text-sm">Hipertenso</p>
-      </div>
-    </div>
-
-    <div class="relative group overflow-hidden rounded-lg">
-      <img src="/Img/Diabético.webp" alt="Diabético" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
-      <div class="absolute bottom-0 bg-black/60 w-full py-2 text-center">
-        <p class="text-white font-semibold text-sm">Diabético</p>
-      </div>
-    </div>
-
-    <div class="relative group overflow-hidden rounded-lg">
-      <img src="/Img/Saúde do Idoso.jpeg" alt="Saúde do Idoso" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
-      <div class="absolute bottom-0 bg-black/60 w-full py-2 text-center">
-        <p class="text-white font-semibold text-sm">Saúde do Idoso</p>
-      </div>
-    </div>
-
-    <div class="relative group overflow-hidden rounded-lg">
-      <img src="/Img/" alt="Planejamento Estratégico" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
-      <div class="absolute bottom-0 bg-black/60 w-full py-2 text-center">
-        <p class="text-white font-semibold text-sm">Planejamento Estratégico</p>
-      </div>
-    </div>
-
-    <div class="relative group overflow-hidden rounded-lg">
-      <img src="/Img/" alt="Planejamento Reprodutivo" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
-      <div class="absolute bottom-0 bg-black/60 w-full py-2 text-center">
-        <p class="text-white font-semibold text-sm">Planejamento Reprodutivo</p>
-      </div>
-    </div>
-
-    <div class="relative group overflow-hidden rounded-lg">
-      <img src="/Img/" alt="Supervisão de ACS" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
-      <div class="absolute bottom-0 bg-black/60 w-full py-2 text-center">
-        <p class="text-white font-semibold text-sm">Supervisão de ACS</p>
-      </div>
-    </div>
-
-    <div class="relative group overflow-hidden rounded-lg">
-      <img src="/Img/" alt="Supervisão da Enfermagem" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
-      <div class="absolute bottom-0 bg-black/60 w-full py-2 text-center">
-        <p class="text-white font-semibold text-sm">Supervisão da Enfermagem</p>
-      </div>
-    </div>
-
-    <div class="relative group overflow-hidden rounded-lg">
-      <img src="/Img/" alt="Atividades Coletivas" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
-      <div class="absolute bottom-0 bg-black/60 w-full py-2 text-center">
-        <p class="text-white font-semibold text-sm">Atividades Coletivas</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- SOBRE A GENTE SER FODAAAAA -->
-<section class="bg-white py-20 px-6 md:px-20 text-gray-800">
-  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-start">
-    <div>
-      <h2 class="text-4xl font-bold font-serif mb-6">
-        Por que a Mentoria Lidera ESF é diferenciada?
-      </h2>
-      <p class="text-lg text-gray-700 mb-4">
-        Porque criamos uma mentoria prática, acessível e 100% focada na realidade do enfermeiro da ESF. Entregamos direção, clareza e ferramentas que funcionam no dia a dia da UBS.
-      </p>
-      <p class="uppercase text-sm font-bold text-black-600 tracking-widest mb-12 mt-0"> Você não precisa mais liderar no escuro.</p>
-      <a href="#contact" 
-         class="inline-block bg-[#214066] hover:bg-[#1a3250] text-white font-bold px-8 py-3 rounded-full transition duration-300">
-        Saiba mais?
-      </a>
-    </div>
-
-    <!-- LISTINHAS -->
-    <div class="space-y-8">
-      <!-- Item 01 -->
-      <div class="flex items-start gap-4">
-        <img src="Img/Feito.png" alt="Feito" class="w-10 h-10 mt-1">
-        <div>
-          <h3 class="text-2xl font-bold">Feita por quem entende a realidade da ESF</h3>
-          <p class="text-gray-600">
-            Tudo na mentoria é pensado por quem vive os mesmos desafios que você: falta de tempo, excesso de funções, pouco apoio.
-          </p>
-        </div>
-      </div>
-
-      <!-- Item 02 -->
-      <div class="flex items-start gap-4">
-        <img src="Img/Mais.png" alt="Mais" class="w-10 h-10 mt-1">
-        <div>
-          <h3 class="text-2xl font-bold">Mais do que aulas gravadas</h3>
-          <p class="text-gray-600">
-            Você terá acesso a conteúdos aplicáveis, um site com tudo que precisa para atuar na UBS, além de encontros com experts em temas relevantes e uma rede de apoio com enfermeiros de todo o Brasil.
-          </p>
-        </div>
-      </div>
-
-      <!-- Item 03 -->
-      <div class="flex items-start gap-4">
-        <img src="Img/Alvo.png" alt="alvo" class="w-10 h-10 mt-1">
-        <div>
-          <h3 class="text-2xl font-bold">Objetividade e organização que economizam seu tempo</h3>
-          <p class="text-gray-600">
-            Aqui você aprende o necessário — direto ao ponto, sem enrolação. Conteúdo dividido por temas, com passo a passo de aplicação.
-          </p>
-        </div>
-      </div>
-
-      <!-- Item 04 -->
-      <div class="flex items-start gap-4">
-        <img src="Img/Certo.png" alt="Certo" class="w-13 h-10 mt-1">
-        <div>
-          <h3 class="text-2xl font-bold">Honestidade e acolhimento de verdade</h3>
-          <p class="text-gray-600">
-            Nada de promessas impossíveis. Aqui a proposta é te dar segurança, companhia e ferramentas para liderar com leveza, segurança e resolutividade.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- COMO TUDO TÁ FUNCIONANDO (COMO A GENTE QUER QUE SEJA) -->
-<section class="bg-gray-100 py-20 px-6 md:px-20">
-  <div class="max-w-7xl mx-auto text-center">
-    <h2 class="text-4xl font-bold font-serif text-gray-800 mb-12">Como Funciona a Mentoria Lidera ESF</h2>
-    <div class="bg-black text-white rounded-2xl p-10 md:p-16 space-y-10 relative overflow-hidden">
-      <div class="hidden md:block absolute top-20 left-16 right-16 h-px bg-[#214066] z-0"></div>
-      <div class="grid md:grid-cols-4 gap-12 relative z-10">
-
-        <!-- Etapa 1 -->
-        <div class="flex flex-col items-center">
-          <div class="inline-block bg-[#214066] hover:bg-[#1a3250] text-white font-bold w-14 h-14 flex items-center justify-center rounded-full text-xl mb-4 z-10">1</div>
-          <h3 class="text-2xl font-semibold text-lg mb-2">Acesse a plataforma</h3>
-          <p class="text-1xl text-sm text-gray-300">Após sua inscrição tenha acesso imediato à área exclusiva da mentoria com todos os módulos organizados por temas da ESF. Todo mês novas aulas são inseridas, tornando ela cada vez mais completa.</p>
-        </div>
-
-        <!-- Etapa 2 -->
-        <div class="flex flex-col items-center">
-          <div class="inline-block bg-[#214066] hover:bg-[#1a3250] text-white font-bold w-14 h-14 flex items-center justify-center rounded-full text-xl mb-4 z-10">2</div>
-          <h3 class="text-2xl font-semibold text-lg mb-2">Estude no seu ritmo</h3>
-          <p class="text-1xl text-sm text-gray-300">Assista às aulas gravadas de forma flexível, conforme sua rotina. Todos os conteúdos são práticos, objetivos e aplicáveis à UBS.</p>
-        </div>
-
-        <!-- Etapa 3 -->
-        <div class="flex flex-col items-center">
-          <div class="inline-block bg-[#214066] hover:bg-[#1a3250] text-white font-bold w-14 h-14 flex items-center justify-center rounded-full text-xl mb-4 z-10">3</div>
-          <h3 class="text-2xl font-semibold text-lg mb-2">Use os materiais de apoio</h3>
-          <p class="text-sm text-gray-300">VAcesse o Guia do Enfermeiro de Saúde da Família, um site com roteiros de atendimento, protocolos, prescrições, tabelas prontos para facilitar seus atendimentos, registros e organização da equipe.</p>
-        </div>
-
-        <!-- Etapa 4 -->
-        <div class="flex flex-col items-center">
-          <div class="inline-block bg-[#214066] hover:bg-[#1a3250] text-white font-bold w-14 h-14 flex items-center justify-center rounded-full text-xl mb-4 z-10">4</div>
-          <h3 class="text-2xl font-semibold text-lg mb-2">Participe da rede</h3>
-          <p class="text-sm text-gray-300">Conecte-se com outros enfermeiros da ESF no grupo exclusivo e nos encontros online mensais. Compartilhe dúvidas, estratégias e vivências reais da APS.</p>
-        </div>
-      </div>
-
-      <!-- CÊ É BURRO E AINDA QUER AJUDA? -->
-      <div class="bg-white text-black rounded-xl shadow-lg p-6 md:p-8 text-left mt-10 max-w-3xl mx-auto flex items-start gap-4">
-        <div>
-          <h4 class="text-2xl font-semibold text-lg mb-1">Conte com apoio, sempre que precisar</h4>
-          <p class="text-3xl text-sm text-gray-900">
-            Você não está sozinha(o). Nossa equipe está aqui para te apoiar na prática e fortalecer sua liderança na atenção primária.
-          </p>
-        </div>
-      </div>
-      <div class="mt-10">
-        <a href="#contact" class="inline-block bg-[#214066] hover:bg-[#1a3250] text-white font-bold px-10 py-3 rounded-full transition">
-          Comece agora
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-    <!-- Equipe (VOU TER QUE FAZER UM CARRUSEU NESSA MERDA) -->
-     
-<section id="team" class="py-12 px-4 md:py-16 md:px-6 bg-white">
-  <h2 class="text-2xl md:text-4xl font-bold text-center md:text-left md:ml-72 mb-4">
-    É uma nova forma de viver a Enfermagem na ESF.
-  </h2>
-  
-  <p class="text-base md:text-xl text-gray-600 text-center md:text-left md:ml-72 mb-8">
-    Enfermeiras de todo o Brasil estão ganhando mais segurança, organização e propósito na sua prática.
-    <span class="text-lg md:text-2xl text-pink-700 font-semibold">#lideranaesf</span>
-  </p>
-
-  <div class="swiper teamSwiper max-w-7xl mx-auto px-4">
-    <div class="swiper-wrapper">
-
-      <!-- Slide 1 -->
-      <div class="swiper-slide w-full max-w-sm bg-white rounded-xl shadow-lg overflow-hidden">
-        <img src="/Img/1.webp" alt="Equipe 1" class="w-full h-80 object-cover" />
-      </div>
-
-      <!-- Slide 2 -->
-      <div class="swiper-slide w-full max-w-sm bg-white rounded-xl shadow-lg overflow-hidden">
-        <img src="/Img/2.png" alt="Equipe 2" class="w-full h-80 object-cover" />
-      </div>
-
-      <!-- Slide 3 -->
-      <div class="swiper-slide w-full max-w-sm bg-white rounded-xl shadow-lg overflow-hidden">
-        <img src="/Img/1.webp" alt="Equipe 3" class="w-full h-80 object-cover" />
-      </div>
-
-      <!-- Slide 4 -->
-      <div class="swiper-slide w-full max-w-sm bg-white rounded-xl shadow-lg overflow-hidden">
-        <img src="/Img/2.png" alt="Equipe 4" class="w-full h-80 object-cover" />
-      </div>
-
-      <!-- Slide 5 -->
-      <div class="swiper-slide w-full max-w-sm bg-white rounded-xl shadow-lg overflow-hidden">
-        <img src="/Img/1.webp" alt="Equipe 5" class="w-full h-80 object-cover" />
-      </div>
-
-      <!-- Slide 6 -->
-      <div class="swiper-slide w-full max-w-sm bg-white rounded-xl shadow-lg overflow-hidden">
-        <img src="/Img/2.png" alt="Equipe 6" class="w-full h-80 object-cover" />
-    </div>
-</section>
-
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
-<script>
-   const swiper = new Swiper(".teamSwiper", {
-    slidesPerView: 1.1,
-    spaceBetween: 20,
-    loop: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev"
-    },
-    breakpoints: {
-      640: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 3,
-      },
-      1280: {
-        slidesPerView: 4,
-      }
-    },
-    autoplay: {
-      delay: 1700,
-      disableOnInteraction: false,
-    },
-    on: {
-      autoplay: function () {
-        if (!swiper.customDirection) swiper.customDirection = "forward";
-
-        if (swiper.customDirection === "forward") {
-          swiper.slideTo(swiper.activeIndex + 2);
-          swiper.customDirection = "back";
-        } else {
-          swiper.slideTo(swiper.activeIndex - 1);
-          swiper.customDirection = "forward";
+<html lang="pt-BR">
+<head>
+  <link rel="icon" href="Img/Logo Lidera normal.png" type="image/x-icon">
+<link rel="shortcut icon" href="Img/Logo Lidera normal.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="32x32" href="Img/Logo Lidera normal.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lidera ESF</title>
+  <meta name="description" content="Mentoria especializada para enfermeiros da ESF. Aulas práticas, guias digitais, encontros ao vivo e rede de apoio. Lidere com confiança na Estratégia Saúde da Família.">
+  <link rel="canonical" href="https://lideraesf.com.br/mentoria">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: 'hsl(210 58% 30%)',
+              foreground: 'hsl(0 0% 100%)',
+              light: 'hsl(210 58% 40%)',
+              dark: 'hsl(210 58% 20%)',
+            },
+            secondary: {
+              DEFAULT: 'hsl(210 20% 95%)',
+              foreground: 'hsl(210 58% 30%)',
+            },
+            muted: {
+              DEFAULT: 'hsl(210 20% 96%)',
+              foreground: 'hsl(215 20% 65%)',
+            },
+            card: {
+              DEFAULT: 'hsl(0 0% 100%)',
+              foreground: 'hsl(222 84% 5%)',
+            },
+            border: 'hsl(214 32% 91%)',
+            background: 'hsl(0 0% 100%)',
+            foreground: 'hsl(222 84% 5%)',
+            success: {
+              DEFAULT: 'hsl(142 76% 36%)',
+              foreground: 'hsl(0 0% 100%)',
+            },
+            trust: {
+              DEFAULT: 'hsl(197 100% 50%)',
+              foreground: 'hsl(0 0% 100%)',
+            }
+          },
+          backgroundImage: {
+            'gradient-primary': 'linear-gradient(135deg, hsl(210 58% 30%), hsl(210 58% 40%))',
+            'gradient-trust': 'linear-gradient(135deg, hsl(197 100% 50%), hsl(197 100% 60%))',
+            'gradient-subtle': 'linear-gradient(180deg, hsl(210 20% 98%), hsl(210 20% 96%))',
+          },
+          boxShadow: {
+            'soft': '0 2px 10px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+            'medium': '0 4px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+            'strong': '0 10px 40px -10px rgba(0, 0, 0, 0.25), 0 20px 25px -5px rgba(0, 0, 0, 0.1)',
+          },
+          animation: {
+            'fade-up': 'fadeUp 0.5s ease-out',
+            'scale-in': 'scaleIn 0.3s ease-out',
+          }
         }
       }
     }
-  });
-</script>
+  </script>
+  <style>
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    .nav-link:hover {
+      color: hsl(210 20% 80%);
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 50%;
+      background-color: white;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, hsl(210 58% 30%), hsl(210 58% 40%));
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, hsl(210 58% 25%), hsl(210 58% 35%));
+      transform: translateY(-2px);
+      box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.25);
+    }
+    .btn-secondary {
+      background: hsl(0 0% 100%);
+      color: hsl(210 58% 30%);
+      border: 2px solid hsl(214 32% 91%);
+      transition: all 0.3s ease;
+    }
+    .btn-secondary:hover {
+      background: hsl(210 20% 98%);
+      border-color: hsl(210 58% 30%);
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+<body class="bg-gradient-subtle text-foreground">
+<header class="fixed top-0 left-0 right-0 z-50 bg-primary shadow-medium">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+    
+    
+    
+    
+    <!-- IMAGEM DE LOGO -->
+    <div class="flex items-center">
+      <a href="/index.htm">
+        <img src="Img/Logo Lidera normal.png" alt="LIDERA ESF Logo" class="h-12 w-auto">
+      </a>
+    </div>
+    <!-- //FIMMM DA IMAGEM DE LOGO// -->
 
 
-    <section class="relative text-white py-20 overflow-hidden bg-black">
-  <!-- Overlay escuro -->
-  <div class="absolute inset-0 bg-black/60 z-0"></div>
 
-  <!-- Texto + Botão -->
-  <div class="relative z-10 max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
-    <div class="mb-12 md:mb-0">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">
-        E então, para onde vamos agora, Enfermeira?
-        <p class="text-left text-xl text-gray-200 mt-4 mb-10">Você pode continuar se virando sozinha…<br>
- Ou pode escolher trilhar um caminho com clareza, apoio e direção.</p>
 
-      </h2>
-      <button class="inline-block bg-[#214066] hover:bg-[#1a3250] text-white font-bold py-3 px-8 rounded-full transition">
-        Comece sua Jornada com a mentoria Lidera ESF
-      </button>
+    <!-- MENU DE NAVEGAÇÃO -->
+    <button id="menu-btn" class="md:hidden p-2 text-primary-foreground hover:bg-primary-light/20 rounded-lg transition-colors">
+      <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+
+    <nav class="hidden md:flex items-center space-x-8">
+      <a href="/index.htm" class="nav-link text-primary-foreground">Início</a>
+      <a href="/vendas.html" class="nav-link text-primary-foreground">Mentoria</a>
+      <a href="/sobre.html" class="nav-link text-primary-foreground">Criadora</a>
+      <a href="#contato" class="nav-link text-primary-foreground">Contato</a>
+      
+      <a href="login.html" class="flex items-center gap-2 bg-secondary text-secondary-foreground px-4 py-2 rounded-lg hover:bg-secondary/80 transition-colors">
+  <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+  </svg>
+  Login
+</a>
+    </nav>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden bg-card border-t border-border shadow-medium">
+    <nav class="flex flex-col px-4 py-4 space-y-4">
+      <a href="/index.htm" class="px-3 py-2 text-foreground hover:text-primary transition-colors">Início</a>
+      <a href="/vendas.html" class="px-3 py-2 text-foreground hover:text-primary transition-colors">Mentoria</a>
+      <a href="/sobre.html" class="px-3 py-2 text-foreground hover:text-primary transition-colors">Criadora</a>
+      <a href="#contato" class="px-3 py-2 text-foreground hover:text-primary transition-colors">Contato</a>
+      <div class="pt-2">
+        <a href="login.html" class="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary-dark transition-colors w-fit">
+  <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+  </svg>
+  Login
+</a>
+
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- //FIM DO MENU DE NAVEGAÇÃO// -->
+
+
+
+
+<!-- BANNER PRINCIPAL -->
+<section id="inicio" class="relative text-white pt-24">
+  <div class="absolute inset-0">
+    <img src="Img/WhatsApp Image 2025-09-16 at 21.51.39 (1).jpeg" alt="Banner" 
+         class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-[#1E3A5F]/70"></div>
+  </div>
+
+  <div class="relative w-full text-left py-72 px-4 md:px-32">
+    <h1 class="text-4xl md:text-5xl font-extrabold leading-snug mb-6">
+      Enfermeiro de Saúde da Família,<br>
+      <span class="text-[#92E5E6]">chega de se virar sozinho!</span>
+    </h1>
+    <p class="text-lg md:text-xl font-light mb-8 text-left max-w-3xl">
+      Aqui você encontra ferramentas que associam a teoria à prática da Unidade Básica de Saúde. 
+      Mentoria especializada para transformar sua liderança na ESF.
+    </p>
+
+    <div class="flex gap-4">
+      <a href="vendas.html" class="bg-white text-[#204C79] px-6 py-3 rounded-lg font-semibold shadow hover:bg-gray-100 transition">
+        Conhecer a Mentoria →
+      </a>
+      <a href="#contato" class="border border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/10 transition">
+        Entre em Contato
+      </a>
+    </div>
+  </div>
+
+  <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2">
+    <div class="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+      <div class="w-1 h-2 bg-white rounded-full mt-2 custom-bounce"></div>
+    </div>
+  </div>
+
+  <style>
+    @keyframes custom-bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+    .custom-bounce {
+      animation: custom-bounce 1s infinite;
+    }
+  </style>
+</section>
+<!-- //FIM DO BANNER PRINCIPAL// -->
+
+
+
+
+<!-- SERVIÇO E AREAS DE ATUAÇÃO -->
+<h2 class="text-5xl font-bold text-center mt-20 mb-10">Áreas de Especialização</h2>
+<p class="text-center text-2xl max-w-4xl mx-auto text-gray-500 mb-16 px-4">Conteúdo especializado para cada área da Estratégia Saúde da Família, com foco <br> prático no dia a dia da UBS.</p>
+  <div class="relative mt-12 max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 z-10">
+
+    <div class="relative overflow-hidden rounded-xl shadow-lg group">
+      <img src="Img/SAÚDE DA MULHER (1).jpg" alt="Saúde da Mulher" 
+           class="w-full h-56 object-cover group-hover:scale-105 transition duration-300">
+      <div class="absolute bottom-0 w-full bg-white/80 backdrop-blur-sm py-3 text-center shadow-md group-hover:bg-white">
+        <h3 class="text-gray-800 font-bold text-lg group-hover:text-blue-700 transition">Saúde da Mulher</h3>
+      </div>
+    </div>
+    <div class="relative overflow-hidden rounded-xl shadow-lg group">
+      <img src="Img/Puericultura.png" alt="Puericultura" 
+           class="w-full h-56 object-cover group-hover:scale-105 transition duration-300">
+      <div class="absolute bottom-0 w-full bg-white/80 backdrop-blur-sm py-3 text-center shadow-md group-hover:bg-white">
+        <h3 class="text-gray-800 font-bold text-lg group-hover:text-blue-700 transition">Puericultura</h3>
+      </div>
+    </div>
+    <div class="relative overflow-hidden rounded-xl shadow-lg group">
+      <img src="Img/Hipertenso.png" alt="Hipertenso" 
+           class="w-full h-56 object-cover group-hover:scale-105 transition duration-300">
+      <div class="absolute bottom-0 w-full bg-white/80 backdrop-blur-sm py-3 text-center shadow-md group-hover:bg-white">
+        <h3 class="text-gray-800 font-bold text-lg group-hover:text-blue-700 transition">Hipertenso</h3>
+      </div>
+    </div>
+    <div class="relative overflow-hidden rounded-xl shadow-lg group">
+      <img src="Img/Diabético.webp" alt="Diabético" 
+           class="w-full h-56 object-cover group-hover:scale-105 transition duration-300">
+      <div class="absolute bottom-0 w-full bg-white/80 backdrop-blur-sm py-3 text-center shadow-md group-hover:bg-white">
+        <h3 class="text-gray-800 font-bold text-lg group-hover:text-blue-700 transition">Diabético</h3>
+      </div>
+    </div>
+    <div class="relative overflow-hidden rounded-xl shadow-lg group">
+      <img src="Img/Saúde do Idoso.jpeg" alt="Saúde do Idoso" 
+           class="w-full h-56 object-cover group-hover:scale-105 transition duration-300">
+      <div class="absolute bottom-0 w-full bg-white/80 backdrop-blur-sm py-3 text-center shadow-md group-hover:bg-white">
+        <h3 class="text-gray-800 font-bold text-lg group-hover:text-blue-700 transition">Saúde do Idoso</h3>
+      </div>
+    </div>
+    <div class="relative overflow-hidden rounded-xl shadow-lg group">
+      <img src="Img/Planejamento estratégico em saúde.png" alt="Planejamento Estratégico" 
+           class="w-full h-56 object-cover group-hover:scale-105 transition duration-300">
+      <div class="absolute bottom-0 w-full bg-white/80 backdrop-blur-sm py-3 text-center shadow-md group-hover:bg-white">
+        <h3 class="text-gray-800 font-bold text-lg group-hover:text-blue-700 transition">Planejamento Estratégico</h3>
+      </div>
+    </div>
+    <div class="relative overflow-hidden rounded-xl shadow-lg group">
+      <img src="Img/GINECO (1).jpg" alt="Planejamento Reprodutivo" 
+           class="w-full h-56 object-cover group-hover:scale-105 transition duration-300">
+      <div class="absolute bottom-0 w-full bg-white/80 backdrop-blur-sm py-3 text-center shadow-md group-hover:bg-white">
+        <h3 class="text-gray-800 font-bold text-lg group-hover:text-blue-700 transition">Planejamento Reprodutivo</h3>
+      </div>
+    </div>
+    <div class="relative overflow-hidden rounded-xl shadow-lg group">
+      <img src="Img/SUPERVISÃO DE ACS (1).jpg" alt="Supervisão de ACS" 
+           class="w-full h-56 object-cover group-hover:scale-105 transition duration-300">
+      <div class="absolute bottom-0 w-full bg-white/80 backdrop-blur-sm py-3 text-center shadow-md group-hover:bg-white">
+        <h3 class="text-gray-800 font-bold text-lg group-hover:text-blue-700 transition">Supervisão de ACS</h3>
+      </div>
+    </div>
+    <div class="relative overflow-hidden rounded-xl shadow-lg group">
+      <img src="Img/Supervisão da enfermagem.jpeg" alt="Supervisão da Enfermagem" 
+           class="w-full h-56 object-cover group-hover:scale-105 transition duration-300">
+      <div class="absolute bottom-0 w-full bg-white/80 backdrop-blur-sm py-3 text-center shadow-md group-hover:bg-white">
+        <h3 class="text-gray-800 font-bold text-lg group-hover:text-blue-700 transition">Supervisão da Enfermagem</h3>
+      </div>
+    </div>
+    <div class="relative overflow-hidden rounded-xl shadow-lg group">
+      <img src="Img/ATIVIDADE COLETIVA (2).jpg" alt="Atividades Coletivas" 
+           class="w-full h-56 object-cover group-hover:scale-105 transition duration-300">
+      <div class="absolute bottom-0 w-full bg-white/80 backdrop-blur-sm py-3 text-center shadow-md group-hover:bg-white">
+        <h3 class="text-gray-800 font-bold text-lg group-hover:text-blue-700 transition">Atividades Coletivas</h3>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- //FIMM DO SERVIÇO E AREAS DE ATUAÇÃO// -->
+
+
+
+
+
+<!-- SOBRE A MENTORIA -->
+<section class="bg-gray-50 mt-32 py-20 px-6 md:px-20">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<div class="flex flex-col justify-center space-y-6">
+  <h2 class="text-4xl md:text-5xl font-extrabold leading-tight text-gray-900 font-[Inter]">
+    Por que a Mentoria <br>
+    <span class="text-[#204C79]">Lidera ESF</span> 
+    é diferenciada?
+  </h2>
+
+  </h2>
+      <p class="text-lg md:text-xl text-gray-700">
+        Criamos uma mentoria prática, acessível e 100% focada na realidade do enfermeiro da ESF.
+        Entregamos direção, clareza e ferramentas que funcionam no dia a dia da UBS.
+      </p>
+      <p class="uppercase text-sm font-semibold tracking-widest text-gray-900">
+        Você não precisa mais liderar no escuro.
+      </p>
+      <a href="/vendas.html"
+         class="inline-block bg-[#214066] hover:bg-[#1a3250] text-white font-bold px-10 py-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">
+        Saiba mais
+      </a>
+    </div>
+    <div class="flex flex-col space-y-6">
+      <div class="group relative bg-white rounded-xl shadow-md overflow-hidden transition-all duration-500 hover:shadow-2xl hover:scale-105">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">
+            Feita por quem entende a realidade da ESF
+          </h3>
+        </div>
+        <div class="absolute inset-0 bg-[#214066] text-white p-6 flex flex-col justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+          <p class="text-sm leading-relaxed">
+            Conteúdo criado por quem vive os mesmos desafios: falta de tempo, muitas funções e pouco apoio.
+          </p>
+        </div>
+      </div>
+      <div class="group relative bg-white rounded-xl shadow-md overflow-hidden transition-all duration-500 hover:shadow-2xl hover:scale-105">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">
+            Mais do que aulas gravadas
+          </h3>
+        </div>
+        <div class="absolute inset-0 bg-[#214066] text-white p-6 flex flex-col justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+          <p class="text-sm leading-relaxed">
+            Você terá acesso a conteúdos aplicáveis, site exclusivo, encontros com experts e rede de apoio.
+          </p>
+        </div>
+      </div>
+      <div class="group relative bg-white rounded-xl shadow-md overflow-hidden transition-all duration-500 hover:shadow-2xl hover:scale-105">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">
+            Objetividade e organização
+          </h3>
+        </div>
+        <div class="absolute inset-0 bg-[#214066] text-white p-6 flex flex-col justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+          <p class="text-sm leading-relaxed">
+            Aprenda só o necessário, direto ao ponto e dividido por temas claros.
+          </p>
+        </div>
+      </div>
+      <div class="group relative bg-white rounded-xl shadow-md overflow-hidden transition-all duration-500 hover:shadow-2xl hover:scale-105">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">
+            Honestidade e acolhimento de verdade
+          </h3>
+        </div>
+        <div class="absolute inset-0 bg-[#214066] text-white p-6 flex flex-col justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+          <p class="text-sm leading-relaxed">
+            Aqui não tem promessas impossíveis. Só apoio real para liderar com leveza.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section id="como-funciona" class="relative bg-[#204C79] py-20 px-6 overflow-hidden">
+  <svg class="absolute inset-0 w-full h-full z-0 pointer-events-none" viewBox="0 0 1000 200" preserveAspectRatio="none">
+    <path d="M0,100 Q250,0 500,100 T1000,100" fill="none" stroke="#ffffff44" stroke-width="2" stroke-dasharray="8 8"/>
+  </svg>
+  <!-- //FIMMM DO SOBRE A MENTORIA// -->
+
+
+
+
+<!-- CURIOSIDADE -->
+  <div class="max-w-6xl mx-auto text-center relative z-10">
+    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Como funciona a mentoria
+    </h2>
+    <p class="text-white mb-12 max-w-3xl text-2xl text-[#E0E0E0] mx-auto">
+      Um processo simples e estruturado para transformar sua prática na ESF
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 justify-center">
+      <div class="group relative bg-white rounded-lg shadow-lg p-6 h-40 hover:h-96 transition-all duration-500 overflow-hidden">
+        <div class="w-10 h-10 mx-auto flex items-center justify-center bg-blue-100 text-blue-600 rounded-full text-lg font-bold mb-4">
+          1
+        </div>
+        <h3 class="text-sm font-semibold text-gray-900">Acesse a plataforma</h3>
+        <p class="text-gray-600 text-xs">Acesso imediato à área exclusiva.</p>
+        <div class="absolute bottom-0 left-0 right-0 px-4 pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <p class="text-gray-700 text-sm">
+            Após sua inscrição tenha acesso imediato à área exclusiva da mentoria com todos os módulos organizados por temas da ESF. Todo mês novas aulas são inseridas, tornando ela cada vez mais completa.
+          </p>
+        </div>
+      </div>
+      <div class="group relative bg-white rounded-lg shadow-lg p-6 h-40 hover:h-96 transition-all duration-500 overflow-hidden">
+        <div class="w-10 h-10 mx-auto flex items-center justify-center bg-blue-100 text-blue-600 rounded-full text-lg font-bold mb-4">
+          2
+        </div>
+        <h3 class="text-sm font-semibold text-gray-900">Estude no seu ritmo</h3>
+        <p class="text-gray-600 text-xs">Flexibilidade para o dia a dia da UBS.</p>
+        <div class="absolute bottom-0 left-0 right-0 px-4 pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <p class="text-gray-700 text-sm">
+            Assista às aulas gravadas de forma flexível, conforme sua rotina. Todos os conteúdos são práticos, objetivos e aplicáveis à UBS.
+          </p>
+        </div>
+      </div>
+      <div class="group relative bg-white rounded-lg shadow-lg p-6 h-40 hover:h-96 transition-all duration-500 overflow-hidden">
+        <div class="w-10 h-10 mx-auto flex items-center justify-center bg-blue-100 text-blue-600 rounded-full text-lg font-bold mb-4">
+          3
+        </div>
+        <h3 class="text-sm font-semibold text-gray-900">Use materiais de apoio</h3>
+        <p class="text-gray-600 text-xs">Protocolos prontos para facilitar.</p>
+        <div class="absolute bottom-0 left-0 right-0 px-4 pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <p class="text-gray-700 text-sm">
+            Acesse o Guia do Enfermeiro de Saúde da Família, um site com roteiros de atendimento, protocolos, prescrições, tabelas prontos para facilitar seus atendimentos, registros e organização da equipe.
+          </p>
+        </div>
+      </div>
+      <div class="group relative bg-white rounded-lg shadow-lg p-6 h-40 hover:h-96 transition-all duration-500 overflow-hidden">
+        <div class="w-10 h-10 mx-auto flex items-center justify-center bg-blue-100 text-blue-600 rounded-full text-lg font-bold mb-4">
+          4
+        </div>
+        <h3 class="text-sm font-semibold text-gray-900">Participe da rede</h3>
+        <p class="text-gray-600 text-xs">Troque experiências com colegas.</p>
+        <div class="absolute bottom-0 left-0 right-0 px-4 pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <p class="text-gray-700 text-sm">
+            Conecte-se com outros enfermeiros da ESF no grupo exclusivo e nos encontros online mensais. Compartilhe dúvidas, estratégias e vivências reais da APS.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="text-center text-1xl text-sm text-[#E0E0E0] mt-8">
+    Pronto para transformar sua liderança na ESF?
+    <div class="flex justify-center mt-8">
+  <a href="/vendas.html" class="bg-white text-[#424242] font-semibold py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700 transition">
+    Comece agora
+  </a>
+</div>
+</section>
+<!-- //FIMM DA CURIOSIDADE// -->
+
+
+
+<!-- ALUNOS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css" />
+
+<section id="alunos" class="bg-white pt-16 pb-2">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    
+    <!-- Texto -->
+    <h2 class="text-4xl md:text-[2.5rem] font-extrabold mb-2">
+      É uma nova forma de viver a Enfermagem na ESF.
+    </h2>
+    <p class="text-gray-600 text-lg md:text-xl mb-6">
+      Enfermeiras de todo o Brasil estão ganhando mais segurança, organização e propósito na sua prática.
+      <span class="text-pink-700 font-semibold text-lg md:text-2xl">#lideranaesf</span>
+    </p>
+    
+    <!-- Cards -->
+    <div class="swiper mt-0 mb-0">
+      <div class="swiper-wrapper" id="slides"></div>
+
+      <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Anterior"></div>
+      <div class="swiper-button-next" tabindex="0" role="button" aria-label="Próximo"></div>
+
+      <div class="swiper-pagination mt-6"></div>
     </div>
   </div>
 </section>
 
+<style>
+  #alunos .swiper { padding: 0; }
+  #alunos .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #alunos .swiper-slide img {
+    width: auto;
+    height: 18rem;
+    object-fit: cover;
+    border-radius: 1rem;
+    transition: transform 260ms ease, box-shadow 260ms ease;
+    background-color: #fff;
+  }
+  #alunos .swiper-slide-active img {
+    transform: scale(1.06);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.22);
+    outline: 4px solid rgba(255,255,255,0.85);
+  }
+  #alunos .swiper-slide-next img,
+  #alunos .swiper-slide-prev img {
+    transform: scale(0.98);
+    filter: saturate(0.96);
+  }
+  #alunos .swiper-button-prev,
+  #alunos .swiper-button-next {
+    color: #111827;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  }
+</style>
 
-    <!-- Contato -->
-    <section id="contact" class="bg-[#e6edf6] py-24 px-6">
-      <h2 class="text-3xl font-serif text-center mb-6">Entre em Contato</h2>
-      <p class="text-center text-gray-600 mb-10">Envie sua mensagem e retornaremos o mais breve possível.</p>
-      <form class="max-w-xl mx-auto space-y-6">
-        <input type="text" placeholder="Nome" class="w-full border border-gray-300 rounded-lg p-3" />
-        <input type="email" placeholder="Email" class="w-full border border-gray-300 rounded-lg p-3" />
-        <textarea rows="5" placeholder="Mensagem" class="w-full border border-gray-300 rounded-lg p-3"></textarea>
-        <button type="submit" class="w-full bg-[#214066] text-white py-3 rounded-lg font-semibold hover:bg-[#1a3250] transition">Enviar</button>
-      </form>
-    </section>
+<script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
+<script>
+  const TOTAL = 67;
+  const slidesContainer = document.getElementById('slides');
 
-    <!-- Footer -->
-<footer class="bg-black text-white py-12 px-6">
-  <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 text-sm">
-    
-    <!-- COLUNA 1: Contato>
-        Vamos começar?-->
-    <div>
-      <h2 class="text-lg font-bold uppercase mb-4" style="font-family: Arial, sans-serif;">
-  Estamos aqui para apoiar sua jornada na ESF
-</h2>
+  for (let i = 1; i <= TOTAL; i++) {
+    const slide = document.createElement('div');
+    slide.className = 'swiper-slide';
+    slide.setAttribute('role', 'listitem');
 
-      <p class="mb-2">📩 Fale com a gente:</p>
-      <ul class="space-y-1">
-        <li><a href="#" class="text-white text-[#1a3250] hover:underline">Envie uma mensagem</a></li>
-        <li><a href="#" class="text-white text-[#1a3250] hover:underline">Chame no WhatsApp</a></li>
-        <li><a href="mailto:contato@lideraesf.com.br" class="text-white text-[#1a3250] hover:underline">Envie um e-mail</a></li>
-      </ul>
-  <div class="flex space-x-4 items-center">
-    <!-- Substitua os src pelos caminhos reais das imagens -->
-    <a href="#" target="_blank">
-      <img src="/img/instagram.png" alt="Instagram" class="w-6 h-6 hover:opacity-80 transition" />
-    </a>
-    <a href="#" target="_blank">
-      <img src="/img/facebook.png" alt="Facebook" class="w-6 h-6 hover:opacity-80 transition" />
-    </a>
-    <a href="https://wa.me/5599999999999" target="_blank">
-      <img src="/img/whatsapp.png" alt="WhatsApp" class="w-6 h-6 hover:opacity-80 transition" />
-    </a>
-    <a href="#" target="_blank">
-      <img src="/img/twitter.png" alt="Twitter" class="w-6 h-6 hover:opacity-80 transition" />
-    </a>
-  </div>
+    const img = document.createElement('img');
+    img.src = `/Img/  (${i}).png`;
+    img.alt = `Foto ${i} de ${TOTAL}`;
+
+    slide.appendChild(img);
+    slidesContainer.appendChild(slide);
+  }
+
+  const swiper = new Swiper('#alunos .swiper', {
+    slidesPerView: 5,
+    centeredSlides: true,
+    spaceBetween: 18,
+    loop: true,
+    initialSlide: Math.floor(TOTAL / 2),
+    grabCursor: true,
+    autoplay: {
+      delay: 1200,
+      disableOnInteraction: false
+    },
+    pagination: { el: '.swiper-pagination', clickable: true },
+    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    keyboard: { enabled: true },
+    mousewheel: { forceToAxis: true },
+    breakpoints: {
+      320: { slidesPerView: 1, spaceBetween: 12 },
+      640: { slidesPerView: 3, spaceBetween: 14 },
+      1024: { slidesPerView: 5, spaceBetween: 18 }
+    }
+  });
+</script>
+<!-- //FIMM DOS ALUNOS// -->
+
+
+
+<!-- FORMULÁRIO DE CONTATO -->
+<form id="feedback-form" class="modulo-card bg-[#204C79] mt-0 text-white rounded-3xl shadow-xl pt-12 p-6 col-span-full text-center hover:shadow-2xl transition cursor-pointer block">
+  <h3 class="text-5xl mt-8 font-bold mb-2">Fale Conosco</h3>
+  <p class="text-lg opacity-90 mb-4">Tem dúvidas sobre a mentoria? Entre em contato e vamos conversar sobre <br> como podemos ajudar na sua jornada na ESF.</p>
+  <input type="text" name="user_name" placeholder="Seu nome" required
+         class="w-full mb-3 p-2 rounded-lg text-gray-800">
+  <input type="email" name="user_email" placeholder="Seu e-mail" required
+         class="w-full mb-3 p-2 rounded-lg text-gray-800">
+  <textarea name="message" placeholder="Escreva seu feedback" required
+            class="w-full mb-4 p-2 rounded-lg text-gray-800 h-24"></textarea>
+  <button type="submit" 
+          class="bg-white text-[#204C79] font-semibold px-6 py-2 rounded-xl shadow hover:bg-gray-200 transition">
+    Enviar Feedback
+  </button>
+</form>
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function(){
+      emailjs.init("fNYtZvBWWYq7P3zhO");
+  })();
+  const form = document.getElementById('feedback-form');
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    emailjs.sendForm('service_ii88jhi', 'template_jvuh1ej', this)
+      .then(() => {
+        alert('Feedback enviado com sucesso!');
+        form.reset();
+      }, (error) => {
+        alert('Erro ao enviar feedback. Tente novamente.');
+        console.error(error);
+      });
+  });
+</script>
 </div>
+<!-- FIMM DO FORMULÁRIO DE CONTATO -->
 
-    <!-- COLUNA 2: Recursos -->
-    <div>
-      <h3 class="text-white text-[#1a3250] font-bold uppercase mb-3" style="font-family: Arial, sans-serif;"> Recursos</h3>
-      <ul class="space-y-1">
-        <li>Aulas por temas da ESF</li>
-        <li>Guias práticos do Enfermeiro</li>
-        <li>Protocolos organizados</li>
-        <li>Modelos de evolução</li>
-        <li>Planejamentos e tabelas</li>
-        <li>Materiais para supervisão das equipes de ACS e enfermagem</li>
-      </ul>
+
+
+
+  <!-- FOOTER -->
+  <footer class="bg-[#f3f4f6] pt-8">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 text-sm">
+      <div>
+        <h2 class="text-lg font-bold uppercase mb-4" style="font-family: Arial, sans-serif;">
+          Estamos aqui para apoiar sua jornada na ESF
+        </h2>
+        <p class="mb-2">Fale com a gente:</p>
+        <ul class="space-y-1">
+          <li><a href="#" class="text-[#1a3250] hover:underline">Envie uma mensagem</a></li>
+          <li><a href="#" class="text-[#1a3250] hover:underline">Chame no WhatsApp</a></li>
+          <li><a href="mailto:contato@lideraesf.com.br" class="text-[#1a3250] hover:underline">Envie um e-mail</a></li>
+        </ul>
+        <div class="flex space-x-4 items-center mt-3">
+          <a href="#" target="_blank"><img src="/img/instagram.png" alt="Instagram" class="w-6 h-6 hover:opacity-80 transition" /></a>
+          <a href="#" target="_blank"><img src="/img/facebook.png" alt="Facebook" class="w-6 h-6 hover:opacity-80 transition" /></a>
+          <a href="https://wa.me/5599999999999" target="_blank"><img src="/img/whatsapp.png" alt="WhatsApp" class="w-6 h-6 hover:opacity-80 transition" /></a>
+          <a href="#" target="_blank"><img src="/img/twitter.png" alt="Twitter" class="w-6 h-6 hover:opacity-80 transition" /></a>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-[#1a3250] font-bold uppercase mb-3" style="font-family: Arial, sans-serif;"> Recursos</h3>
+        <ul class="space-y-1">
+          <li>Aulas por temas da ESF</li>
+          <li>Guias práticos do Enfermeiro</li>
+          <li>Protocolos organizados</li>
+          <li>Modelos de evolução</li>
+          <li>Planejamentos e tabelas</li>
+          <li>Materiais para supervisão das equipes de ACS e enfermagem</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-[#1a3250] font-bold uppercase mb-3" style="font-family: Arial, sans-serif;"> Para Enfermeiros</h3>
+        <ul class="space-y-1">
+          <li>Comunidade de apoio</li>
+          <li>Encontros ao vivo</li>
+          <li>Grupo de networking</li>
+          <li>Resumo dos indicadores</li>
+          <li>Estratégias de organização</li>
+          <li>Boas práticas para UBS</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-[#1a3250] font-bold uppercase mb-3" style="font-family: Arial, sans-serif;"> Sobre a Mentoria</h3>
+        <ul class="space-y-1">
+          <li>Quem somos</li>
+          <li>Como funciona</li>
+          <li>Depoimentos de mentoradas</li>
+          <li>Política de acesso</li>
+          <li>Termos de uso</li>
+        </ul>
+      </div>
     </div>
-
-    <!-- COLUNA 3: Para Enfermeiros -->
-    <div>
-      <h3 class="text-white text-[#1a3250] font-bold uppercase mb-3" style="font-family: Arial, sans-serif;"> Para Enfermeiros</h3>
-      <ul class="space-y-1">
-        <li>Comunidade de apoio</li>
-        <li>Encontros ao vivo</li>
-        <li>Grupo de networking</li>
-        <li>Resumo dos indicadores</li>
-        <li>Estratégias de organização</li>
-        <li>Boas práticas para UBS</li>
-      </ul>
+    <div class="text-center text-xs text-gray-500 mt-10 border-t pt-6">
+      © 2025 Lidera ESF. Todos os direitos reservados.
     </div>
-
-    <!-- COLUNA 4: Sobre a Mentoria -->
-    <div>
-      <h3 class="text-white text-[#1a3250] font-bold uppercase mb-3" style="font-family: Arial, sans-serif;"> Sobre a Mentoria</h3>
-      <ul class="space-y-1">
-        <li>Quem somos</li>
-        <li>Como funciona</li>
-        <li>Depoimentos de mentoradas</li>
-        <li>Política de acesso</li>
-        <li>Termos de uso</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Rodapé final -->
-  <div class="text-center text-xs text-gray-500 mt-10 border-t pt-6">
-    © 2025 Lidera ESF. Todos os direitos reservados.
-  </div>
-</footer>
-
-  </body>
+  </footer>
+</body>
 </html>
+<!-- //FIMM DO FORMULÁRIO DE CONTATO// -->

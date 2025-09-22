@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+   <link rel="icon" href="Img/Logo Lidera normal.png" type="image/x-icon">
+<link rel="shortcut icon" href="Img/Logo Lidera normal.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="32x32" href="Img/Logo Lidera normal.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Finalizar Compra - LIDERA ESF</title>
+  <title>Carrinho</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="text-gray-800 bg-gray-50">
@@ -37,7 +40,7 @@
     <section class="lg:col-span-2 bg-white rounded-2xl shadow p-6">
       <h2 class="text-2xl font-bold mb-6">Finalizar compra</h2>
 
-      <!-- Forma de pagamentoo -->
+      <!-- Forma de pagamento -->
       <h3 class="text-lg font-semibold mb-3">Forma de pagamento</h3>
       <div class="space-y-3">
         <label class="flex items-center border rounded-md p-3 cursor-pointer">
@@ -55,7 +58,7 @@
       </div>
     </section>
 
-    <!-- Coluna da Direita  -->
+    <!-- Coluna da Direita -->
     <aside id="cart-summary" class="bg-white rounded-2xl shadow p-6 h-fit hidden">
       <h3 class="text-lg font-bold mb-4">Resumo do pedido</h3>
       <ul id="summary-list" class="text-sm space-y-2"></ul>
@@ -73,19 +76,15 @@
   </main>
 
   <script>
-    // para o mobilizaço
+    // Toggle menu mobile
     const toggleBtn = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     toggleBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
 
-    let cart = [
-      {
-        nome: "Curso de enfermagem LIDERA ESF",
-        preco: 140.00
-      }
-    ];
+    // Carregar carrinho salvo pelo botão "Comprar Agora"
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
     function renderCart() {
       const orderDetails = document.getElementById("order-details");
@@ -103,21 +102,20 @@
 
       orderDetails.classList.remove("hidden");
       cartSummary.classList.remove("hidden");
-
       cartItems.innerHTML = "";
       summaryList.innerHTML = "";
-
       let total = 0;
 
       cart.forEach((item, index) => {
         total += item.preco;
 
-        // para o item do carrinho
-        let div = document.createElement("div");
+        const div = document.createElement("div");
         div.className = "flex items-center justify-between border rounded-lg p-3";
         div.innerHTML = `
           <div class="flex items-center gap-3">
-            <div class="w-14 h-14 bg-gray-300 rounded-md"></div>
+            <img src="Img/FOTO DO _COMECE SUA JORNADA_ (1).jpg" 
+                 alt="${item.nome}" 
+                 class="w-16 h-16 object-cover rounded-md">
             <span class="text-sm font-medium">${item.nome}</span>
           </div>
           <div class="text-sm text-right">
@@ -129,7 +127,7 @@
 
         summaryList.innerHTML += `
           <li class="flex justify-between">
-            <span>${item.nome}</span> 
+            <span>${item.nome}</span>
             <span>R$ ${item.preco.toFixed(2)}</span>
           </li>
           <hr>
@@ -142,6 +140,7 @@
 
     function removeFromCart(index) {
       cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
       renderCart();
     }
 
